@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from F:\ANDROID APPS\TTIT\app\src\main\AndroidManifest.xml:2:1-52:12
-INJECTED from F:\ANDROID APPS\TTIT\app\src\main\AndroidManifest.xml:2:1-52:12
-INJECTED from F:\ANDROID APPS\TTIT\app\src\main\AndroidManifest.xml:2:1-52:12
-INJECTED from F:\ANDROID APPS\TTIT\app\src\main\AndroidManifest.xml:2:1-52:12
+ADDED from F:\ANDROID APPS\TTIT\app\src\main\AndroidManifest.xml:2:1-57:12
+INJECTED from F:\ANDROID APPS\TTIT\app\src\main\AndroidManifest.xml:2:1-57:12
+INJECTED from F:\ANDROID APPS\TTIT\app\src\main\AndroidManifest.xml:2:1-57:12
+INJECTED from F:\ANDROID APPS\TTIT\app\src\main\AndroidManifest.xml:2:1-57:12
 MERGED from [com.github.denzcoskun:ImageSlideshow:0.1.0] C:\Users\Temzo Tech\.gradle\caches\transforms-3\78734fa96aad3daf91d158523b2ce5c0\transformed\jetified-ImageSlideshow-0.1.0\AndroidManifest.xml:2:1-11:12
 MERGED from [com.google.android.material:material:1.10.0] C:\Users\Temzo Tech\.gradle\caches\transforms-3\9c7a8c3303b7010ab2e1988213615e60\transformed\material-1.10.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\Temzo Tech\.gradle\caches\transforms-3\40ae44cbdff4bc9e3c9901d0592dc26a\transformed\constraintlayout-2.1.4\AndroidManifest.xml:2:1-11:12
@@ -115,8 +115,8 @@ ADDED from F:\ANDROID APPS\TTIT\app\src\main\AndroidManifest.xml:6:5-77
 	android:name
 		ADDED from F:\ANDROID APPS\TTIT\app\src\main\AndroidManifest.xml:6:22-74
 application
-ADDED from F:\ANDROID APPS\TTIT\app\src\main\AndroidManifest.xml:8:5-50:19
-INJECTED from F:\ANDROID APPS\TTIT\app\src\main\AndroidManifest.xml:8:5-50:19
+ADDED from F:\ANDROID APPS\TTIT\app\src\main\AndroidManifest.xml:8:5-55:19
+INJECTED from F:\ANDROID APPS\TTIT\app\src\main\AndroidManifest.xml:8:5-55:19
 MERGED from [com.google.android.material:material:1.10.0] C:\Users\Temzo Tech\.gradle\caches\transforms-3\9c7a8c3303b7010ab2e1988213615e60\transformed\material-1.10.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.10.0] C:\Users\Temzo Tech\.gradle\caches\transforms-3\9c7a8c3303b7010ab2e1988213615e60\transformed\material-1.10.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\Temzo Tech\.gradle\caches\transforms-3\40ae44cbdff4bc9e3c9901d0592dc26a\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
@@ -249,12 +249,20 @@ ADDED from F:\ANDROID APPS\TTIT\app\src\main\AndroidManifest.xml:42:9-44:40
 		ADDED from F:\ANDROID APPS\TTIT\app\src\main\AndroidManifest.xml:44:13-37
 	android:name
 		ADDED from F:\ANDROID APPS\TTIT\app\src\main\AndroidManifest.xml:43:13-50
-activity#com.temzotech.ContactUsActivity
-ADDED from F:\ANDROID APPS\TTIT\app\src\main\AndroidManifest.xml:46:9-48:40
+activity#com.temzotech.ServicesActivity
+ADDED from F:\ANDROID APPS\TTIT\app\src\main\AndroidManifest.xml:46:9-49:58
+	android:parentActivityName
+		ADDED from F:\ANDROID APPS\TTIT\app\src\main\AndroidManifest.xml:49:13-55
 	android:exported
 		ADDED from F:\ANDROID APPS\TTIT\app\src\main\AndroidManifest.xml:48:13-37
 	android:name
-		ADDED from F:\ANDROID APPS\TTIT\app\src\main\AndroidManifest.xml:47:13-46
+		ADDED from F:\ANDROID APPS\TTIT\app\src\main\AndroidManifest.xml:47:13-45
+activity#com.temzotech.ContactUsActivity
+ADDED from F:\ANDROID APPS\TTIT\app\src\main\AndroidManifest.xml:51:9-53:40
+	android:exported
+		ADDED from F:\ANDROID APPS\TTIT\app\src\main\AndroidManifest.xml:53:13-37
+	android:name
+		ADDED from F:\ANDROID APPS\TTIT\app\src\main\AndroidManifest.xml:52:13-46
 uses-sdk
 INJECTED from F:\ANDROID APPS\TTIT\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from F:\ANDROID APPS\TTIT\app\src\main\AndroidManifest.xml

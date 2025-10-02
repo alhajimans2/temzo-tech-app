@@ -11,38 +11,64 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-public class ServicesAdapter extends RecyclerView.Adapter<ServicesAdapter.ServiceViewHolder> {
+public class ServicesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
-    private final List<Service> services;
+    private List<Service> services;
     private final OnItemClickListener listener;
+    private final ViewType viewType;
+
+    public enum ViewType {
+        SIMPLE, DETAILED
+    }
 
     public interface OnItemClickListener {
         void onItemClick(Service service);
     }
 
-    public ServicesAdapter(List<Service> services, OnItemClickListener listener) {
+    public ServicesAdapter(List<Service> services, OnItemClickListener listener, ViewType viewType) {
         this.services = services;
         this.listener = listener;
+        this.viewType = viewType;
     }
 
     @NonNull
     @Override
-    public ServiceViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        if (viewType == ViewType.DETAILED.ordinal()) {
+            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.service_item_detailed, parent, false);
+            return new ServiceViewHolderDetailed(view);
+        }
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.service_item, parent, false);
         return new ServiceViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ServiceViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         Service service = services.get(position);
-        holder.serviceTitle.setText(service.getName());
-        holder.serviceIcon.setImageResource(service.getIcon());
+        if (holder instanceof ServiceViewHolderDetailed) {
+            ((ServiceViewHolderDetailed) holder).serviceName.setText(service.getName());
+            ((ServiceViewHolderDetailed) holder).serviceIcon.setImageResource(service.getIcon());
+            ((ServiceViewHolderDetailed) holder).serviceDescription.setText(service.getDescription());
+        } else {
+            ((ServiceViewHolder) holder).serviceTitle.setText(service.getName());
+            ((ServiceViewHolder) holder).serviceIcon.setImageResource(service.getIcon());
+        }
         holder.itemView.setOnClickListener(v -> listener.onItemClick(service));
     }
 
     @Override
     public int getItemCount() {
         return services.size();
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        return viewType.ordinal();
+    }
+
+    public void filterList(List<Service> filteredList) {
+        services = filteredList;
+        notifyDataSetChanged();
     }
 
     public static class ServiceViewHolder extends RecyclerView.ViewHolder {
@@ -53,6 +79,19 @@ public class ServicesAdapter extends RecyclerView.Adapter<ServicesAdapter.Servic
             super(itemView);
             serviceIcon = itemView.findViewById(R.id.service_icon);
             serviceTitle = itemView.findViewById(R.id.service_name);
+        }
+    }
+
+    public static class ServiceViewHolderDetailed extends RecyclerView.ViewHolder {
+        ImageView serviceIcon;
+        TextView serviceName;
+        TextView serviceDescription;
+
+        public ServiceViewHolderDetailed(@NonNull View itemView) {
+            super(itemView);
+            serviceIcon = itemView.findViewById(R.id.service_icon);
+            serviceName = itemView.findViewById(R.id.service_name);
+            serviceDescription = itemView.findViewById(R.id.service_description);
         }
     }
 }

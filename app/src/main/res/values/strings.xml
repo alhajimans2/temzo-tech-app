@@ -1,23 +1,20 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Temzo Tech I.T Services</string>
-    <string name="hello">Hello!</string>
+    <string name="app_name">TTIT</string>
     <string name="services_clicked">Services clicked</string>
+    <string-array name="service_categories">
+        <item>All</item>
+        <item>Hardware</item>
+        <item>Software</item>
+        <item>Development</item>
+    </string-array>
     <string-array name="services_array">
-        <item>Website Design and Development</item>
-        <item>Mobile App Development</item>
-        <item>Software Development</item>
-        <item>Digital Marketing</item>
-        <item>IT Support and Maintenance</item>
-        <item>Hardware and Software sales</item>
-        <item>Graphic Design</item>
-        <item>School Portal/System</item>
-        <item>Hospital Management System</item>
-        <item>Hotel Management System</item>
-        <item>Human Resource Management System</item>
-        <item>Professional I.T Training</item>
-        <item>Video Editing</item>
-        <item>Content Creation</item>
-        <item>General contracts</item>
+        <item>Computer Desktops Leasing</item>
+        <item>Laptop Sales</item>
+        <item>Web Design/Development</item>
+        <item>Networking</item>
+        <item>Software Installations &amp; Fixes</item>
+        <item>Android App Development</item>
+        <item>Desktop Sales</item>
+        <item>Printers &amp; Accessories</item>
     </string-array>
 </resources>

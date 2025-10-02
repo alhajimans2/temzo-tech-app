@@ -59,6 +59,10 @@
             android:name="com.temzotech.ServiceDetailActivity"
             android:exported="false" />
         <activity
+            android:name="com.temzotech.ServicesActivity"
+            android:exported="false"
+            android:parentActivityName="com.temzotech.MainActivity" />
+        <activity
             android:name="com.temzotech.ContactUsActivity"
             android:exported="false" />
         <activity

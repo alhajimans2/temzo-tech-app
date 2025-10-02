@@ -2,6 +2,42 @@
 <issues format="6" by="lint 8.1.0">
 
     <issue
+        id="DefaultLocale"
+        severity="Warning"
+        message="Implicitly using the default locale is a common source of bugs: Use `toLowerCase(Locale)` instead. For strings meant to be internal use `Locale.ROOT`, otherwise `Locale.getDefault()`."
+        category="Correctness"
+        priority="6"
+        summary="Implied default locale in case conversion"
+        explanation="Calling `String#toLowerCase()` or `#toUpperCase()` **without specifying an explicit locale** is a common source of bugs. The reason for that is that those methods will use the current locale on the user&apos;s device, and even though the code appears to work correctly when you are developing the app, it will fail in some locales. For example, in the Turkish locale, the uppercase replacement for `i` is **not** `I`.&#xA;&#xA;If you want the methods to just perform ASCII replacement, for example to convert an enum name, call `String#toUpperCase(Locale.US)` instead. If you really want to use the current locale, call `String#toUpperCase(Locale.getDefault())` instead."
+        url="https://developer.android.com/reference/java/util/Locale.html#default_locale"
+        urls="https://developer.android.com/reference/java/util/Locale.html#default_locale"
+        errorLine1="            boolean searchMatches = service.getName().toLowerCase().contains(currentSearchText.toLowerCase());"
+        errorLine2="                                                      ~~~~~~~~~~~">
+        <location
+            file="F:\ANDROID APPS\TTIT\app\src\main\java\com\temzotech\ServicesActivity.java"
+            line="71"
+            column="55"/>
+    </issue>
+
+    <issue
+        id="DefaultLocale"
+        severity="Warning"
+        message="Implicitly using the default locale is a common source of bugs: Use `toLowerCase(Locale)` instead. For strings meant to be internal use `Locale.ROOT`, otherwise `Locale.getDefault()`."
+        category="Correctness"
+        priority="6"
+        summary="Implied default locale in case conversion"
+        explanation="Calling `String#toLowerCase()` or `#toUpperCase()` **without specifying an explicit locale** is a common source of bugs. The reason for that is that those methods will use the current locale on the user&apos;s device, and even though the code appears to work correctly when you are developing the app, it will fail in some locales. For example, in the Turkish locale, the uppercase replacement for `i` is **not** `I`.&#xA;&#xA;If you want the methods to just perform ASCII replacement, for example to convert an enum name, call `String#toUpperCase(Locale.US)` instead. If you really want to use the current locale, call `String#toUpperCase(Locale.getDefault())` instead."
+        url="https://developer.android.com/reference/java/util/Locale.html#default_locale"
+        urls="https://developer.android.com/reference/java/util/Locale.html#default_locale"
+        errorLine1="            boolean searchMatches = service.getName().toLowerCase().contains(currentSearchText.toLowerCase());"
+        errorLine2="                                                                                               ~~~~~~~~~~~">
+        <location
+            file="F:\ANDROID APPS\TTIT\app\src\main\java\com\temzotech\ServicesActivity.java"
+            line="71"
+            column="96"/>
+    </issue>
+
+    <issue
         id="OldTargetApi"
         severity="Warning"
         message="Not targeting the latest versions of Android; compatibility modes apply. Consider testing and updating this version. Consult the android.os.Build.VERSION_CODES javadoc for details."
@@ -47,11 +83,47 @@
         explanation="Apps that target Android 11 cannot query or interact with other installed apps by default. If you need to query or interact with other installed apps, you may need to add a `&lt;queries>` declaration in your manifest.&#xA;&#xA;As a corollary, the methods `PackageManager#getInstalledPackages` and `PackageManager#getInstalledApplications` will no longer return information about all installed apps. To query specific apps or types of apps, you can use methods like `PackageManager#getPackageInfo` or `PackageManager#queryIntentActivities`."
         url="https://g.co/dev/packagevisibility"
         urls="https://g.co/dev/packagevisibility"
+        errorLine1="            if (intent.resolveActivity(getPackageManager()) != null) {"
+        errorLine2="                       ~~~~~~~~~~~~~~~">
+        <location
+            file="F:\ANDROID APPS\TTIT\app\src\main\java\com\temzotech\ContactActivity.java"
+            line="72"
+            column="24"/>
+    </issue>
+
+    <issue
+        id="QueryPermissionsNeeded"
+        severity="Warning"
+        message="Consider adding a `&lt;queries>` declaration to your manifest when calling this \&#xA;method; see https://g.co/dev/packagevisibility for details"
+        category="Correctness"
+        priority="5"
+        summary="Using APIs affected by query permissions"
+        explanation="Apps that target Android 11 cannot query or interact with other installed apps by default. If you need to query or interact with other installed apps, you may need to add a `&lt;queries>` declaration in your manifest.&#xA;&#xA;As a corollary, the methods `PackageManager#getInstalledPackages` and `PackageManager#getInstalledApplications` will no longer return information about all installed apps. To query specific apps or types of apps, you can use methods like `PackageManager#getPackageInfo` or `PackageManager#queryIntentActivities`."
+        url="https://g.co/dev/packagevisibility"
+        urls="https://g.co/dev/packagevisibility"
+        errorLine1="            if (intent.resolveActivity(getPackageManager()) != null) {"
+        errorLine2="                       ~~~~~~~~~~~~~~~">
+        <location
+            file="F:\ANDROID APPS\TTIT\app\src\main\java\com\temzotech\ContactActivity.java"
+            line="83"
+            column="24"/>
+    </issue>
+
+    <issue
+        id="QueryPermissionsNeeded"
+        severity="Warning"
+        message="Consider adding a `&lt;queries>` declaration to your manifest when calling this \&#xA;method; see https://g.co/dev/packagevisibility for details"
+        category="Correctness"
+        priority="5"
+        summary="Using APIs affected by query permissions"
+        explanation="Apps that target Android 11 cannot query or interact with other installed apps by default. If you need to query or interact with other installed apps, you may need to add a `&lt;queries>` declaration in your manifest.&#xA;&#xA;As a corollary, the methods `PackageManager#getInstalledPackages` and `PackageManager#getInstalledApplications` will no longer return information about all installed apps. To query specific apps or types of apps, you can use methods like `PackageManager#getPackageInfo` or `PackageManager#queryIntentActivities`."
+        url="https://g.co/dev/packagevisibility"
+        urls="https://g.co/dev/packagevisibility"
         errorLine1="            if (emailIntent.resolveActivity(getPackageManager()) != null) {"
         errorLine2="                            ~~~~~~~~~~~~~~~">
         <location
             file="F:\ANDROID APPS\TTIT\app\src\main\java\com\temzotech\ContactUsActivity.java"
-            line="24"
+            line="50"
             column="29"/>
     </issue>
 
@@ -69,8 +141,62 @@
         errorLine2="                           ~~~~~~~~~~~~~~~">
         <location
             file="F:\ANDROID APPS\TTIT\app\src\main\java\com\temzotech\ContactUsActivity.java"
-            line="34"
+            line="60"
             column="28"/>
+    </issue>
+
+    <issue
+        id="QueryPermissionsNeeded"
+        severity="Warning"
+        message="Consider adding a `&lt;queries>` declaration to your manifest when calling this \&#xA;method; see https://g.co/dev/packagevisibility for details"
+        category="Correctness"
+        priority="5"
+        summary="Using APIs affected by query permissions"
+        explanation="Apps that target Android 11 cannot query or interact with other installed apps by default. If you need to query or interact with other installed apps, you may need to add a `&lt;queries>` declaration in your manifest.&#xA;&#xA;As a corollary, the methods `PackageManager#getInstalledPackages` and `PackageManager#getInstalledApplications` will no longer return information about all installed apps. To query specific apps or types of apps, you can use methods like `PackageManager#getPackageInfo` or `PackageManager#queryIntentActivities`."
+        url="https://g.co/dev/packagevisibility"
+        urls="https://g.co/dev/packagevisibility"
+        errorLine1="                if (emailIntent.resolveActivity(getPackageManager()) != null) {"
+        errorLine2="                                ~~~~~~~~~~~~~~~">
+        <location
+            file="F:\ANDROID APPS\TTIT\app\src\main\java\com\temzotech\ContactUsActivity.java"
+            line="78"
+            column="33"/>
+    </issue>
+
+    <issue
+        id="QueryPermissionsNeeded"
+        severity="Warning"
+        message="Consider adding a `&lt;queries>` declaration to your manifest when calling this \&#xA;method; see https://g.co/dev/packagevisibility for details"
+        category="Correctness"
+        priority="5"
+        summary="Using APIs affected by query permissions"
+        explanation="Apps that target Android 11 cannot query or interact with other installed apps by default. If you need to query or interact with other installed apps, you may need to add a `&lt;queries>` declaration in your manifest.&#xA;&#xA;As a corollary, the methods `PackageManager#getInstalledPackages` and `PackageManager#getInstalledApplications` will no longer return information about all installed apps. To query specific apps or types of apps, you can use methods like `PackageManager#getPackageInfo` or `PackageManager#queryIntentActivities`."
+        url="https://g.co/dev/packagevisibility"
+        urls="https://g.co/dev/packagevisibility"
+        errorLine1="            if (intent.resolveActivity(getPackageManager()) != null) {"
+        errorLine2="                       ~~~~~~~~~~~~~~~">
+        <location
+            file="F:\ANDROID APPS\TTIT\app\src\main\java\com\temzotech\MainActivity.java"
+            line="110"
+            column="24"/>
+    </issue>
+
+    <issue
+        id="QueryPermissionsNeeded"
+        severity="Warning"
+        message="Consider adding a `&lt;queries>` declaration to your manifest when calling this \&#xA;method; see https://g.co/dev/packagevisibility for details"
+        category="Correctness"
+        priority="5"
+        summary="Using APIs affected by query permissions"
+        explanation="Apps that target Android 11 cannot query or interact with other installed apps by default. If you need to query or interact with other installed apps, you may need to add a `&lt;queries>` declaration in your manifest.&#xA;&#xA;As a corollary, the methods `PackageManager#getInstalledPackages` and `PackageManager#getInstalledApplications` will no longer return information about all installed apps. To query specific apps or types of apps, you can use methods like `PackageManager#getPackageInfo` or `PackageManager#queryIntentActivities`."
+        url="https://g.co/dev/packagevisibility"
+        urls="https://g.co/dev/packagevisibility"
+        errorLine1="            if (intent.resolveActivity(getPackageManager()) != null) {"
+        errorLine2="                       ~~~~~~~~~~~~~~~">
+        <location
+            file="F:\ANDROID APPS\TTIT\app\src\main\java\com\temzotech\MainActivity.java"
+            line="121"
+            column="24"/>
     </issue>
 
     <issue
@@ -202,6 +328,38 @@
     </issue>
 
     <issue
+        id="NotifyDataSetChanged"
+        severity="Warning"
+        message="It will always be more efficient to use more specific change events if you can. Rely on `notifyDataSetChanged` as a last resort."
+        category="Performance"
+        priority="8"
+        summary="Invalidating All RecyclerView Data"
+        explanation="The `RecyclerView` adapter&apos;s `onNotifyDataSetChanged` method does not specify what about the data set has changed, forcing any observers to assume that all existing items and structure may no longer be valid. `LayoutManager`s will be forced to fully rebind and relayout all visible views."
+        errorLine1="        notifyDataSetChanged();"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="F:\ANDROID APPS\TTIT\app\src\main\java\com\temzotech\OnboardingAdapter.java"
+            line="24"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="NotifyDataSetChanged"
+        severity="Warning"
+        message="It will always be more efficient to use more specific change events if you can. Rely on `notifyDataSetChanged` as a last resort."
+        category="Performance"
+        priority="8"
+        summary="Invalidating All RecyclerView Data"
+        explanation="The `RecyclerView` adapter&apos;s `onNotifyDataSetChanged` method does not specify what about the data set has changed, forcing any observers to assume that all existing items and structure may no longer be valid. `LayoutManager`s will be forced to fully rebind and relayout all visible views."
+        errorLine1="        notifyDataSetChanged();"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="F:\ANDROID APPS\TTIT\app\src\main\java\com\temzotech\ServicesAdapter.java"
+            line="71"
+            column="9"/>
+    </issue>
+
+    <issue
         id="UseCompoundDrawables"
         severity="Warning"
         message="This tag and its children can be replaced by one `&lt;TextView/>` and a compound drawable"
@@ -293,7 +451,7 @@
         errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="F:\ANDROID APPS\TTIT\app\src\main\res\layout\activity_profile.xml"
-            line="8"
+            line="7"
             column="5"/>
     </issue>
 
@@ -722,6 +880,22 @@
     </issue>
 
     <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.string.services_clicked` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds.&#xA;&#xA;&#xA;The unused resource check can ignore tests. If you want to include resources that are only referenced from tests, consider packaging them in a test source set instead.&#xA;&#xA;You can include test sources in the unused resource check by setting the system property lint.unused-resources.include-tests =true, and to exclude them (usually for performance reasons), use lint.unused-resources.exclude-tests =true.&#xA;,"
+        errorLine1="    &lt;string name=&quot;services_clicked&quot;>Services clicked&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="F:\ANDROID APPS\TTIT\app\src\main\res\values\strings.xml"
+            line="3"
+            column="13"/>
+    </issue>
+
+    <issue
         id="IconLauncherShape"
         severity="Warning"
         message="Launcher icon used as round icon did not have a circular shape"
@@ -785,12 +959,12 @@
         explanation="Button bars typically use a borderless style for the buttons. Set the `style=&quot;?android:attr/buttonBarButtonStyle&quot;` attribute on each of the buttons, and set `style=&quot;?android:attr/buttonBarStyle&quot;` on the parent layout"
         url="https://material.io/components/dialogs/"
         urls="https://material.io/components/dialogs/"
-        errorLine1="                        &lt;Button"
-        errorLine2="                         ~~~~~~">
+        errorLine1="                            &lt;Button"
+        errorLine2="                             ~~~~~~">
         <location
             file="F:\ANDROID APPS\TTIT\app\src\main\res\layout\activity_main.xml"
-            line="104"
-            column="26"/>
+            line="163"
+            column="30"/>
     </issue>
 
     <issue
@@ -803,12 +977,12 @@
         explanation="Button bars typically use a borderless style for the buttons. Set the `style=&quot;?android:attr/buttonBarButtonStyle&quot;` attribute on each of the buttons, and set `style=&quot;?android:attr/buttonBarStyle&quot;` on the parent layout"
         url="https://material.io/components/dialogs/"
         urls="https://material.io/components/dialogs/"
-        errorLine1="                        &lt;Button"
-        errorLine2="                         ~~~~~~">
+        errorLine1="                            &lt;Button"
+        errorLine2="                             ~~~~~~">
         <location
             file="F:\ANDROID APPS\TTIT\app\src\main\res\layout\activity_main.xml"
-            line="116"
-            column="26"/>
+            line="175"
+            column="30"/>
     </issue>
 
     <issue
@@ -839,12 +1013,12 @@
         explanation="Non-textual widgets like ImageViews and ImageButtons should use the `contentDescription` attribute to specify a textual description of the widget such that screen readers and other accessibility tools can adequately describe the user interface.&#xA;&#xA;Note that elements in application screens that are purely decorative and do not provide any content or enable a user action should not have accessibility content descriptions. In this case, set their descriptions to `@null`. If your app&apos;s minSdkVersion is 16 or higher, you can instead set these graphical elements&apos; `android:importantForAccessibility` attributes to `no`.&#xA;&#xA;Note that for text fields, you should not set both the `hint` and the `contentDescription` attributes since the hint will never be shown. Just set the `hint`."
         url="https://developer.android.com/guide/topics/ui/accessibility/apps#special-cases"
         urls="https://developer.android.com/guide/topics/ui/accessibility/apps#special-cases"
-        errorLine1="            &lt;ImageView"
-        errorLine2="             ~~~~~~~~~">
+        errorLine1="                    &lt;ImageView"
+        errorLine2="                     ~~~~~~~~~">
         <location
             file="F:\ANDROID APPS\TTIT\app\src\main\res\layout\activity_contact_us.xml"
-            line="44"
-            column="14"/>
+            line="54"
+            column="22"/>
     </issue>
 
     <issue
@@ -857,48 +1031,12 @@
         explanation="Non-textual widgets like ImageViews and ImageButtons should use the `contentDescription` attribute to specify a textual description of the widget such that screen readers and other accessibility tools can adequately describe the user interface.&#xA;&#xA;Note that elements in application screens that are purely decorative and do not provide any content or enable a user action should not have accessibility content descriptions. In this case, set their descriptions to `@null`. If your app&apos;s minSdkVersion is 16 or higher, you can instead set these graphical elements&apos; `android:importantForAccessibility` attributes to `no`.&#xA;&#xA;Note that for text fields, you should not set both the `hint` and the `contentDescription` attributes since the hint will never be shown. Just set the `hint`."
         url="https://developer.android.com/guide/topics/ui/accessibility/apps#special-cases"
         urls="https://developer.android.com/guide/topics/ui/accessibility/apps#special-cases"
-        errorLine1="            &lt;ImageView"
-        errorLine2="             ~~~~~~~~~">
+        errorLine1="                    &lt;ImageView"
+        errorLine2="                     ~~~~~~~~~">
         <location
             file="F:\ANDROID APPS\TTIT\app\src\main\res\layout\activity_contact_us.xml"
-            line="90"
-            column="14"/>
-    </issue>
-
-    <issue
-        id="ContentDescription"
-        severity="Warning"
-        message="Missing `contentDescription` attribute on image"
-        category="Accessibility"
-        priority="3"
-        summary="Image without `contentDescription`"
-        explanation="Non-textual widgets like ImageViews and ImageButtons should use the `contentDescription` attribute to specify a textual description of the widget such that screen readers and other accessibility tools can adequately describe the user interface.&#xA;&#xA;Note that elements in application screens that are purely decorative and do not provide any content or enable a user action should not have accessibility content descriptions. In this case, set their descriptions to `@null`. If your app&apos;s minSdkVersion is 16 or higher, you can instead set these graphical elements&apos; `android:importantForAccessibility` attributes to `no`.&#xA;&#xA;Note that for text fields, you should not set both the `hint` and the `contentDescription` attributes since the hint will never be shown. Just set the `hint`."
-        url="https://developer.android.com/guide/topics/ui/accessibility/apps#special-cases"
-        urls="https://developer.android.com/guide/topics/ui/accessibility/apps#special-cases"
-        errorLine1="            &lt;ImageView"
-        errorLine2="             ~~~~~~~~~">
-        <location
-            file="F:\ANDROID APPS\TTIT\app\src\main\res\layout\activity_main.xml"
-            line="29"
-            column="14"/>
-    </issue>
-
-    <issue
-        id="ContentDescription"
-        severity="Warning"
-        message="Missing `contentDescription` attribute on image"
-        category="Accessibility"
-        priority="3"
-        summary="Image without `contentDescription`"
-        explanation="Non-textual widgets like ImageViews and ImageButtons should use the `contentDescription` attribute to specify a textual description of the widget such that screen readers and other accessibility tools can adequately describe the user interface.&#xA;&#xA;Note that elements in application screens that are purely decorative and do not provide any content or enable a user action should not have accessibility content descriptions. In this case, set their descriptions to `@null`. If your app&apos;s minSdkVersion is 16 or higher, you can instead set these graphical elements&apos; `android:importantForAccessibility` attributes to `no`.&#xA;&#xA;Note that for text fields, you should not set both the `hint` and the `contentDescription` attributes since the hint will never be shown. Just set the `hint`."
-        url="https://developer.android.com/guide/topics/ui/accessibility/apps#special-cases"
-        urls="https://developer.android.com/guide/topics/ui/accessibility/apps#special-cases"
-        errorLine1="    &lt;ImageView"
-        errorLine2="     ~~~~~~~~~">
-        <location
-            file="F:\ANDROID APPS\TTIT\app\src\main\res\layout\activity_profile.xml"
-            line="23"
-            column="6"/>
+            line="100"
+            column="22"/>
     </issue>
 
     <issue
@@ -914,9 +1052,27 @@
         errorLine1="        &lt;ImageView"
         errorLine2="         ~~~~~~~~~">
         <location
-            file="F:\ANDROID APPS\TTIT\app\src\main\res\layout\activity_service_detail.xml"
-            line="24"
+            file="F:\ANDROID APPS\TTIT\app\src\main\res\layout\activity_profile.xml"
+            line="28"
             column="10"/>
+    </issue>
+
+    <issue
+        id="ContentDescription"
+        severity="Warning"
+        message="Missing `contentDescription` attribute on image"
+        category="Accessibility"
+        priority="3"
+        summary="Image without `contentDescription`"
+        explanation="Non-textual widgets like ImageViews and ImageButtons should use the `contentDescription` attribute to specify a textual description of the widget such that screen readers and other accessibility tools can adequately describe the user interface.&#xA;&#xA;Note that elements in application screens that are purely decorative and do not provide any content or enable a user action should not have accessibility content descriptions. In this case, set their descriptions to `@null`. If your app&apos;s minSdkVersion is 16 or higher, you can instead set these graphical elements&apos; `android:importantForAccessibility` attributes to `no`.&#xA;&#xA;Note that for text fields, you should not set both the `hint` and the `contentDescription` attributes since the hint will never be shown. Just set the `hint`."
+        url="https://developer.android.com/guide/topics/ui/accessibility/apps#special-cases"
+        urls="https://developer.android.com/guide/topics/ui/accessibility/apps#special-cases"
+        errorLine1="            &lt;ImageView"
+        errorLine2="             ~~~~~~~~~">
+        <location
+            file="F:\ANDROID APPS\TTIT\app\src\main\res\layout\activity_service_detail.xml"
+            line="35"
+            column="14"/>
     </issue>
 
     <issue
@@ -1094,8 +1250,44 @@
         errorLine1="        &lt;ImageView"
         errorLine2="         ~~~~~~~~~">
         <location
+            file="F:\ANDROID APPS\TTIT\app\src\main\res\layout\promotion_card_item.xml"
+            line="14"
+            column="10"/>
+    </issue>
+
+    <issue
+        id="ContentDescription"
+        severity="Warning"
+        message="Missing `contentDescription` attribute on image"
+        category="Accessibility"
+        priority="3"
+        summary="Image without `contentDescription`"
+        explanation="Non-textual widgets like ImageViews and ImageButtons should use the `contentDescription` attribute to specify a textual description of the widget such that screen readers and other accessibility tools can adequately describe the user interface.&#xA;&#xA;Note that elements in application screens that are purely decorative and do not provide any content or enable a user action should not have accessibility content descriptions. In this case, set their descriptions to `@null`. If your app&apos;s minSdkVersion is 16 or higher, you can instead set these graphical elements&apos; `android:importantForAccessibility` attributes to `no`.&#xA;&#xA;Note that for text fields, you should not set both the `hint` and the `contentDescription` attributes since the hint will never be shown. Just set the `hint`."
+        url="https://developer.android.com/guide/topics/ui/accessibility/apps#special-cases"
+        urls="https://developer.android.com/guide/topics/ui/accessibility/apps#special-cases"
+        errorLine1="        &lt;ImageView"
+        errorLine2="         ~~~~~~~~~">
+        <location
             file="F:\ANDROID APPS\TTIT\app\src\main\res\layout\service_item.xml"
             line="16"
+            column="10"/>
+    </issue>
+
+    <issue
+        id="ContentDescription"
+        severity="Warning"
+        message="Missing `contentDescription` attribute on image"
+        category="Accessibility"
+        priority="3"
+        summary="Image without `contentDescription`"
+        explanation="Non-textual widgets like ImageViews and ImageButtons should use the `contentDescription` attribute to specify a textual description of the widget such that screen readers and other accessibility tools can adequately describe the user interface.&#xA;&#xA;Note that elements in application screens that are purely decorative and do not provide any content or enable a user action should not have accessibility content descriptions. In this case, set their descriptions to `@null`. If your app&apos;s minSdkVersion is 16 or higher, you can instead set these graphical elements&apos; `android:importantForAccessibility` attributes to `no`.&#xA;&#xA;Note that for text fields, you should not set both the `hint` and the `contentDescription` attributes since the hint will never be shown. Just set the `hint`."
+        url="https://developer.android.com/guide/topics/ui/accessibility/apps#special-cases"
+        urls="https://developer.android.com/guide/topics/ui/accessibility/apps#special-cases"
+        errorLine1="        &lt;ImageView"
+        errorLine2="         ~~~~~~~~~">
+        <location
+            file="F:\ANDROID APPS\TTIT\app\src\main\res\layout\service_item_detailed.xml"
+            line="14"
             column="10"/>
     </issue>
 
@@ -1113,6 +1305,78 @@
             file="F:\ANDROID APPS\TTIT\app\src\main\res\layout\activity_contact.xml"
             line="38"
             column="14"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="            textViewSelectServices.setText(&quot;Select Services&quot;);"
+        errorLine2="                                           ~~~~~~~~~~~~~~~~~">
+        <location
+            file="F:\ANDROID APPS\TTIT\app\src\main\java\com\temzotech\ContactUsActivity.java"
+            line="121"
+            column="44"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="                welcomeText.setText(&quot;Hello, &quot; + firstName + &quot;!&quot;);"
+        errorLine2="                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="F:\ANDROID APPS\TTIT\app\src\main\java\com\temzotech\MainActivity.java"
+            line="67"
+            column="37"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="                welcomeText.setText(&quot;Hello, &quot; + firstName + &quot;!&quot;);"
+        errorLine2="                                    ~~~~~~~~~">
+        <location
+            file="F:\ANDROID APPS\TTIT\app\src\main\java\com\temzotech\MainActivity.java"
+            line="67"
+            column="37"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="                welcomeText.setText(&quot;Hello!&quot;);"
+        errorLine2="                                    ~~~~~~~~">
+        <location
+            file="F:\ANDROID APPS\TTIT\app\src\main\java\com\temzotech\MainActivity.java"
+            line="70"
+            column="37"/>
     </issue>
 
     <issue
@@ -1219,12 +1483,12 @@
         priority="5"
         summary="Hardcoded text"
         explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait) you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
-        errorLine1="        android:text=&quot;Contact Us&quot;"
-        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~">
+        errorLine1="                android:text=&quot;Contact Us&quot;"
+        errorLine2="                ~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="F:\ANDROID APPS\TTIT\app\src\main\res\layout\activity_contact_us.xml"
-            line="14"
-            column="9"/>
+            line="25"
+            column="17"/>
     </issue>
 
     <issue
@@ -1235,12 +1499,12 @@
         priority="5"
         summary="Hardcoded text"
         explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait) you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
-        errorLine1="                android:text=&quot;Email Us&quot;"
-        errorLine2="                ~~~~~~~~~~~~~~~~~~~~~~~">
+        errorLine1="                        android:text=&quot;Email Us&quot;"
+        errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="F:\ANDROID APPS\TTIT\app\src\main\res\layout\activity_contact_us.xml"
-            line="57"
-            column="17"/>
+            line="68"
+            column="25"/>
     </issue>
 
     <issue
@@ -1251,12 +1515,44 @@
         priority="5"
         summary="Hardcoded text"
         explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait) you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
-        errorLine1="                android:text=&quot;Call Us&quot;"
-        errorLine2="                ~~~~~~~~~~~~~~~~~~~~~~">
+        errorLine1="                        android:text=&quot;Call Us&quot;"
+        errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="F:\ANDROID APPS\TTIT\app\src\main\res\layout\activity_contact_us.xml"
-            line="103"
-            column="17"/>
+            line="114"
+            column="25"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        severity="Warning"
+        message="Hardcoded string &quot;Select Services&quot;, should use `@string` resource"
+        category="Internationalization"
+        priority="5"
+        summary="Hardcoded text"
+        explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait) you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
+        errorLine1="                        android:hint=&quot;Select Services&quot;"
+        errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="F:\ANDROID APPS\TTIT\app\src\main\res\layout\activity_contact_us.xml"
+            line="148"
+            column="25"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        severity="Warning"
+        message="Hardcoded string &quot;Request Services&quot;, should use `@string` resource"
+        category="Internationalization"
+        priority="5"
+        summary="Hardcoded text"
+        explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait) you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
+        errorLine1="                        android:text=&quot;Request Services&quot;"
+        errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="F:\ANDROID APPS\TTIT\app\src\main\res\layout\activity_contact_us.xml"
+            line="160"
+            column="25"/>
     </issue>
 
     <issue
@@ -1267,12 +1563,76 @@
         priority="5"
         summary="Hardcoded text"
         explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait) you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
-        errorLine1="                android:text=&quot;Hello, User!&quot;"
-        errorLine2="                ~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        errorLine1="                    android:text=&quot;Hello, User!&quot;"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="F:\ANDROID APPS\TTIT\app\src\main\res\layout\activity_main.xml"
-            line="25"
-            column="17"/>
+            line="66"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        severity="Warning"
+        message="Hardcoded string &quot;Recommended for You&quot;, should use `@string` resource"
+        category="Internationalization"
+        priority="5"
+        summary="Hardcoded text"
+        explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait) you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
+        errorLine1="                    android:text=&quot;Recommended for You&quot;"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="F:\ANDROID APPS\TTIT\app\src\main\res\layout\activity_main.xml"
+            line="75"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        severity="Warning"
+        message="Hardcoded string &quot;Promotions&quot;, should use `@string` resource"
+        category="Internationalization"
+        priority="5"
+        summary="Hardcoded text"
+        explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait) you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
+        errorLine1="                    android:text=&quot;Promotions&quot;"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="F:\ANDROID APPS\TTIT\app\src\main\res\layout\activity_main.xml"
+            line="92"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        severity="Warning"
+        message="Hardcoded string &quot;Popular Services&quot;, should use `@string` resource"
+        category="Internationalization"
+        priority="5"
+        summary="Hardcoded text"
+        explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait) you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
+        errorLine1="                        android:text=&quot;Popular Services&quot;"
+        errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="F:\ANDROID APPS\TTIT\app\src\main\res\layout\activity_main.xml"
+            line="117"
+            column="25"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        severity="Warning"
+        message="Hardcoded string &quot;See All&quot;, should use `@string` resource"
+        category="Internationalization"
+        priority="5"
+        summary="Hardcoded text"
+        explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait) you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
+        errorLine1="                        android:text=&quot;See All&quot;"
+        errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="F:\ANDROID APPS\TTIT\app\src\main\res\layout\activity_main.xml"
+            line="125"
+            column="25"/>
     </issue>
 
     <issue
@@ -1283,12 +1643,12 @@
         priority="5"
         summary="Hardcoded text"
         explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait) you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
-        errorLine1="                        android:text=&quot;Need Immediate Help?&quot;"
-        errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        errorLine1="                            android:text=&quot;Need Immediate Help?&quot;"
+        errorLine2="                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="F:\ANDROID APPS\TTIT\app\src\main\res\layout\activity_main.xml"
-            line="93"
-            column="25"/>
+            line="152"
+            column="29"/>
     </issue>
 
     <issue
@@ -1299,12 +1659,12 @@
         priority="5"
         summary="Hardcoded text"
         explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait) you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
-        errorLine1="                            android:text=&quot;Send us an Email&quot;"
-        errorLine2="                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        errorLine1="                                android:text=&quot;Send us an Email&quot;"
+        errorLine2="                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="F:\ANDROID APPS\TTIT\app\src\main\res\layout\activity_main.xml"
-            line="109"
-            column="29"/>
+            line="168"
+            column="33"/>
     </issue>
 
     <issue
@@ -1315,12 +1675,12 @@
         priority="5"
         summary="Hardcoded text"
         explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait) you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
-        errorLine1="                            android:text=&quot;Call Us Now&quot;"
-        errorLine2="                            ~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        errorLine1="                                android:text=&quot;Call Us Now&quot;"
+        errorLine2="                                ~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="F:\ANDROID APPS\TTIT\app\src\main\res\layout\activity_main.xml"
-            line="121"
-            column="29"/>
+            line="180"
+            column="33"/>
     </issue>
 
     <issue
@@ -1347,12 +1707,12 @@
         priority="5"
         summary="Hardcoded text"
         explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait) you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
-        errorLine1="        android:text=&quot;User Name&quot;"
-        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~">
+        errorLine1="            android:text=&quot;User Name&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="F:\ANDROID APPS\TTIT\app\src\main\res\layout\activity_profile.xml"
-            line="37"
-            column="9"/>
+            line="42"
+            column="13"/>
     </issue>
 
     <issue
@@ -1363,12 +1723,12 @@
         priority="5"
         summary="Hardcoded text"
         explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait) you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
-        errorLine1="        android:text=&quot;user.email@example.com&quot;"
-        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        errorLine1="            android:text=&quot;user.email@example.com&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="F:\ANDROID APPS\TTIT\app\src\main\res\layout\activity_profile.xml"
-            line="47"
-            column="9"/>
+            line="52"
+            column="13"/>
     </issue>
 
     <issue
@@ -1379,12 +1739,12 @@
         priority="5"
         summary="Hardcoded text"
         explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait) you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
-        errorLine1="        android:text=&quot;Request a Service&quot;"
-        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        errorLine1="                android:text=&quot;Request a Service&quot;"
+        errorLine2="                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="F:\ANDROID APPS\TTIT\app\src\main\res\layout\activity_service_request.xml"
-            line="15"
-            column="9"/>
+            line="25"
+            column="17"/>
     </issue>
 
     <issue
@@ -1395,12 +1755,12 @@
         priority="5"
         summary="Hardcoded text"
         explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait) you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
-        errorLine1="                    android:hint=&quot;Service Type (e.g. Web Design)&quot; />"
-        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        errorLine1="                            android:hint=&quot;Service Type (e.g. Web Design)&quot; />"
+        errorLine2="                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="F:\ANDROID APPS\TTIT\app\src\main\res\layout\activity_service_request.xml"
-            line="51"
-            column="21"/>
+            line="61"
+            column="29"/>
     </issue>
 
     <issue
@@ -1411,12 +1771,12 @@
         priority="5"
         summary="Hardcoded text"
         explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait) you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
-        errorLine1="                    android:hint=&quot;Details&quot;"
-        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~">
+        errorLine1="                            android:hint=&quot;Details&quot;"
+        errorLine2="                            ~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="F:\ANDROID APPS\TTIT\app\src\main\res\layout\activity_service_request.xml"
-            line="65"
-            column="21"/>
+            line="75"
+            column="29"/>
     </issue>
 
     <issue
@@ -1427,12 +1787,12 @@
         priority="5"
         summary="Hardcoded text"
         explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait) you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
-        errorLine1="                android:text=&quot;Send Request&quot; />"
-        errorLine2="                ~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        errorLine1="                        android:text=&quot;Send Request&quot; />"
+        errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="F:\ANDROID APPS\TTIT\app\src\main\res\layout\activity_service_request.xml"
-            line="74"
-            column="17"/>
+            line="84"
+            column="25"/>
     </issue>
 
     <issue
@@ -1939,12 +2299,12 @@
         priority="5"
         summary="Hardcoded text"
         explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait) you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
-        errorLine1="        android:hint=&quot;First Name&quot;>"
-        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~">
+        errorLine1="            android:hint=&quot;First Name&quot;>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="F:\ANDROID APPS\TTIT\app\src\main\res\layout\fragment_signup.xml"
-            line="13"
-            column="9"/>
+            line="17"
+            column="13"/>
     </issue>
 
     <issue
@@ -1955,12 +2315,12 @@
         priority="5"
         summary="Hardcoded text"
         explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait) you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
-        errorLine1="        android:hint=&quot;Last Name&quot;>"
-        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~">
+        errorLine1="            android:hint=&quot;Last Name&quot;>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="F:\ANDROID APPS\TTIT\app\src\main\res\layout\fragment_signup.xml"
-            line="27"
-            column="9"/>
+            line="31"
+            column="13"/>
     </issue>
 
     <issue
@@ -1971,12 +2331,12 @@
         priority="5"
         summary="Hardcoded text"
         explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait) you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
-        errorLine1="        android:hint=&quot;Email Address&quot;>"
-        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        errorLine1="            android:hint=&quot;Email Address&quot;>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="F:\ANDROID APPS\TTIT\app\src\main\res\layout\fragment_signup.xml"
-            line="41"
-            column="9"/>
+            line="45"
+            column="13"/>
     </issue>
 
     <issue
@@ -1987,12 +2347,12 @@
         priority="5"
         summary="Hardcoded text"
         explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait) you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
-        errorLine1="        android:hint=&quot;Password&quot;"
-        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~">
+        errorLine1="            android:hint=&quot;Password&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="F:\ANDROID APPS\TTIT\app\src\main\res\layout\fragment_signup.xml"
-            line="55"
-            column="9"/>
+            line="59"
+            column="13"/>
     </issue>
 
     <issue
@@ -2003,12 +2363,12 @@
         priority="5"
         summary="Hardcoded text"
         explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait) you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
-        errorLine1="        android:text=&quot;CREATE ACCOUNT&quot; />"
-        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        errorLine1="            android:text=&quot;CREATE ACCOUNT&quot; />"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="F:\ANDROID APPS\TTIT\app\src\main\res\layout\fragment_signup.xml"
-            line="72"
-            column="9"/>
+            line="76"
+            column="13"/>
     </issue>
 
     <issue
@@ -2019,12 +2379,12 @@
         priority="5"
         summary="Hardcoded text"
         explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait) you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
-        errorLine1="        android:text=&quot;Already have an account? Log In&quot; />"
-        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        errorLine1="            android:text=&quot;Already have an account? Log In&quot; />"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="F:\ANDROID APPS\TTIT\app\src\main\res\layout\fragment_signup.xml"
-            line="80"
-            column="9"/>
+            line="84"
+            column="13"/>
     </issue>
 
     <issue
@@ -2137,6 +2497,54 @@
             file="F:\ANDROID APPS\TTIT\app\src\main\res\layout\onboarding_slide3.xml"
             line="40"
             column="9"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        severity="Warning"
+        message="Hardcoded string &quot;Promotion Title&quot;, should use `@string` resource"
+        category="Internationalization"
+        priority="5"
+        summary="Hardcoded text"
+        explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait) you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
+        errorLine1="            android:text=&quot;Promotion Title&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="F:\ANDROID APPS\TTIT\app\src\main\res\layout\promotion_card_item.xml"
+            line="33"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        severity="Warning"
+        message="Hardcoded string &quot;Short description of the promotion.&quot;, should use `@string` resource"
+        category="Internationalization"
+        priority="5"
+        summary="Hardcoded text"
+        explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait) you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
+        errorLine1="            android:text=&quot;Short description of the promotion.&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="F:\ANDROID APPS\TTIT\app\src\main\res\layout\promotion_card_item.xml"
+            line="46"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        severity="Warning"
+        message="Hardcoded string &quot;Claim Offer&quot;, should use `@string` resource"
+        category="Internationalization"
+        priority="5"
+        summary="Hardcoded text"
+        explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait) you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
+        errorLine1="            android:text=&quot;Claim Offer&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="F:\ANDROID APPS\TTIT\app\src\main\res\layout\promotion_card_item.xml"
+            line="58"
+            column="13"/>
     </issue>
 
     <issue

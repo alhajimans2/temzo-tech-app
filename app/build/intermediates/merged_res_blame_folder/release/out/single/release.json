@@ -28,12 +28,20 @@
         "source": "com.temzotech.app-main-45:/mipmap-xxhdpi/ic_launcher.webp"
     },
     {
+        "merged": "com.temzotech.app-merged_res-44:/layout_promotion_card_item.xml.flat",
+        "source": "com.temzotech.app-main-45:/layout/promotion_card_item.xml"
+    },
+    {
         "merged": "com.temzotech.app-merged_res-44:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
         "source": "com.temzotech.app-main-45:/mipmap-xxxhdpi/ic_launcher_round.webp"
     },
     {
         "merged": "com.temzotech.app-merged_res-44:/drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
         "source": "com.temzotech.app-pngs-39:/drawable-anydpi-v24/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "com.temzotech.app-merged_res-44:/layout_activity_services.xml.flat",
+        "source": "com.temzotech.app-main-45:/layout/activity_services.xml"
     },
     {
         "merged": "com.temzotech.app-merged_res-44:/layout_onboarding_slide2.xml.flat",
@@ -168,6 +176,10 @@
         "source": "com.temzotech.app-main-45:/font/roboto_medium.xml"
     },
     {
+        "merged": "com.temzotech.app-merged_res-44:/drawable_gradient_overlay.xml.flat",
+        "source": "com.temzotech.app-main-45:/drawable/gradient_overlay.xml"
+    },
+    {
         "merged": "com.temzotech.app-merged_res-44:/drawable-hdpi_ic_launcher_foreground.png.flat",
         "source": "com.temzotech.app-pngs-39:/drawable-hdpi/ic_launcher_foreground.png"
     },
@@ -194,6 +206,10 @@
     {
         "merged": "com.temzotech.app-merged_res-44:/layout_activity_sign_up.xml.flat",
         "source": "com.temzotech.app-main-45:/layout/activity_sign_up.xml"
+    },
+    {
+        "merged": "com.temzotech.app-merged_res-44:/layout_service_item_detailed.xml.flat",
+        "source": "com.temzotech.app-main-45:/layout/service_item_detailed.xml"
     },
     {
         "merged": "com.temzotech.app-merged_res-44:/mipmap-xhdpi_ic_launcher.webp.flat",

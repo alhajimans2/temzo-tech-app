@@ -1,9 +1,11 @@
 R_DEF: Internal format may change without notice
 local
 anim button_animation
+array service_categories
 array services_array
 color background
 color black
+color bottom_nav_colors
 color colorAccent
 color colorPrimary
 color colorPrimaryVariant
@@ -14,6 +16,7 @@ color surface
 color text_primary
 color text_secondary
 color white
+drawable gradient_overlay
 drawable ic_android
 drawable ic_call
 drawable ic_computer
@@ -57,6 +60,9 @@ id call_now_button
 id cardCall
 id cardEmail
 id cardRequestService
+id claim_offer_button
+id collapsingToolbarLayout
+id company_logo
 id coordinatorLayout
 id create_account_button
 id description
@@ -69,6 +75,7 @@ id editTextLastName
 id editTextPassword
 id editTextServiceType
 id email_edit_text
+id filterSpinner
 id first_name_edit_text
 id fragment_container
 id get_started_button
@@ -77,7 +84,6 @@ id iconEmail
 id iconsLayout
 id imageView
 id imageViewLogo
-id image_slider
 id last_name_edit_text
 id loading_progress_bar
 id login_progress_bar
@@ -87,11 +93,19 @@ id nav_contact
 id nav_home
 id nav_services
 id password_edit_text
-id profileIcon
+id popularServicesRecyclerView
 id profileImage
 id profileListView
 id progressBar
+id promotion_description
+id promotion_image
+id promotion_title
+id promotionsRecyclerView
+id recommendedRecyclerView
+id searchView
+id seeAllServicesButton
 id send_email_button
+id service_description
 id service_detail_description
 id service_detail_icon
 id service_detail_name
@@ -130,6 +144,7 @@ layout activity_onboarding
 layout activity_profile
 layout activity_service_detail
 layout activity_service_request
+layout activity_services
 layout activity_sign_in
 layout activity_sign_up
 layout activity_splash
@@ -142,7 +157,9 @@ layout onboarding_slide
 layout onboarding_slide1
 layout onboarding_slide2
 layout onboarding_slide3
+layout promotion_card_item
 layout service_item
+layout service_item_detailed
 menu bottom_nav_menu
 menu main_menu
 mipmap ic_launcher
@@ -153,7 +170,6 @@ string google_api_key
 string google_app_id
 string google_crash_reporting_api_key
 string google_storage_bucket
-string hello
 string project_id
 string services_clicked
 style TextAppearance.App.Body1

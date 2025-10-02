@@ -1,282 +1,306 @@
 [
     {
-        "merged": "com.temzotech.app-merged_res-44:/menu_bottom_nav_menu.xml.flat",
-        "source": "com.temzotech.app-main-46:/menu/bottom_nav_menu.xml"
+        "merged": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-merged_res-44:\\drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-pngs-39:\\drawable-anydpi-v24\\ic_launcher_foreground.xml"
     },
     {
-        "merged": "com.temzotech.app-merged_res-44:/mipmap-mdpi_ic_launcher_round.webp.flat",
-        "source": "com.temzotech.app-main-46:/mipmap-mdpi/ic_launcher_round.webp"
+        "merged": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-merged_res-44:\\drawable_logo333.png.flat",
+        "source": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-main-46:\\drawable\\logo333.png"
     },
     {
-        "merged": "com.temzotech.app-merged_res-44:/drawable_ic_services.xml.flat",
-        "source": "com.temzotech.app-main-46:/drawable/ic_services.xml"
+        "merged": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-merged_res-44:\\drawable_ic_contact.xml.flat",
+        "source": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-main-46:\\drawable\\ic_contact.xml"
     },
     {
-        "merged": "com.temzotech.app-merged_res-44:/drawable_ic_network.xml.flat",
-        "source": "com.temzotech.app-main-46:/drawable/ic_network.xml"
+        "merged": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-merged_res-44:\\mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-main-46:\\mipmap-xhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "com.temzotech.app-merged_res-44:/drawable_logo.png.flat",
-        "source": "com.temzotech.app-main-46:/drawable/logo.png"
+        "merged": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-merged_res-44:\\layout_activity_sign_up.xml.flat",
+        "source": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-main-46:\\layout\\activity_sign_up.xml"
     },
     {
-        "merged": "com.temzotech.app-merged_res-44:/drawable_ic_android.xml.flat",
-        "source": "com.temzotech.app-main-46:/drawable/ic_android.xml"
+        "merged": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-merged_res-44:\\layout_onboarding_slide2.xml.flat",
+        "source": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-main-46:\\layout\\onboarding_slide2.xml"
     },
     {
-        "merged": "com.temzotech.app-merged_res-44:/mipmap-xxhdpi_ic_launcher.webp.flat",
-        "source": "com.temzotech.app-main-46:/mipmap-xxhdpi/ic_launcher.webp"
+        "merged": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-merged_res-44:\\xml_data_extraction_rules.xml.flat",
+        "source": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-main-46:\\xml\\data_extraction_rules.xml"
     },
     {
-        "merged": "com.temzotech.app-merged_res-44:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
-        "source": "com.temzotech.app-main-46:/mipmap-xxxhdpi/ic_launcher_round.webp"
+        "merged": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-merged_res-44:\\layout_activity_services.xml.flat",
+        "source": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-main-46:\\layout\\activity_services.xml"
     },
     {
-        "merged": "com.temzotech.app-merged_res-44:/drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
-        "source": "com.temzotech.app-pngs-39:/drawable-anydpi-v24/ic_launcher_foreground.xml"
+        "merged": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-merged_res-44:\\layout_activity_sign_in.xml.flat",
+        "source": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-main-46:\\layout\\activity_sign_in.xml"
     },
     {
-        "merged": "com.temzotech.app-merged_res-44:/layout_onboarding_slide2.xml.flat",
-        "source": "com.temzotech.app-main-46:/layout/onboarding_slide2.xml"
+        "merged": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-merged_res-44:\\drawable-xxhdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-pngs-39:\\drawable-xxhdpi\\ic_launcher_foreground.png"
     },
     {
-        "merged": "com.temzotech.app-merged_res-44:/layout_fragment_sign_in.xml.flat",
-        "source": "com.temzotech.app-main-46:/layout/fragment_sign_in.xml"
+        "merged": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-merged_res-44:\\mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-main-46:\\mipmap-hdpi\\ic_launcher.webp"
     },
     {
-        "merged": "com.temzotech.app-merged_res-44:/drawable_ic_sign_out.xml.flat",
-        "source": "com.temzotech.app-main-46:/drawable/ic_sign_out.xml"
+        "merged": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-merged_res-44:\\drawable_ic_call.xml.flat",
+        "source": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-main-46:\\drawable\\ic_call.xml"
     },
     {
-        "merged": "com.temzotech.app-merged_res-44:/layout_onboarding_slide.xml.flat",
-        "source": "com.temzotech.app-main-46:/layout/onboarding_slide.xml"
+        "merged": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-merged_res-44:\\drawable_gradient_overlay.xml.flat",
+        "source": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-main-46:\\drawable\\gradient_overlay.xml"
     },
     {
-        "merged": "com.temzotech.app-merged_res-44:/mipmap-hdpi_ic_launcher.webp.flat",
-        "source": "com.temzotech.app-main-46:/mipmap-hdpi/ic_launcher.webp"
+        "merged": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-merged_res-44:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-main-46:\\mipmap-xxxhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "com.temzotech.app-merged_res-44:/drawable_ic_globe.xml.flat",
-        "source": "com.temzotech.app-main-46:/drawable/ic_globe.xml"
+        "merged": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-merged_res-44:\\drawable_splash_background.xml.flat",
+        "source": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-main-46:\\drawable\\splash_background.xml"
     },
     {
-        "merged": "com.temzotech.app-merged_res-44:/layout_activity_service_request.xml.flat",
-        "source": "com.temzotech.app-main-46:/layout/activity_service_request.xml"
+        "merged": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-merged_res-44:\\drawable_ic_email.xml.flat",
+        "source": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-main-46:\\drawable\\ic_email.xml"
     },
     {
-        "merged": "com.temzotech.app-merged_res-44:/drawable-mdpi_ic_launcher_foreground.png.flat",
-        "source": "com.temzotech.app-pngs-39:/drawable-mdpi/ic_launcher_foreground.png"
+        "merged": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-merged_res-44:\\mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-main-46:\\mipmap-hdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "com.temzotech.app-merged_res-44:/layout_service_item.xml.flat",
-        "source": "com.temzotech.app-main-46:/layout/service_item.xml"
+        "merged": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-merged_res-44:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-main-46:\\mipmap-xxhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "com.temzotech.app-merged_res-44:/mipmap-xxxhdpi_ic_launcher.webp.flat",
-        "source": "com.temzotech.app-main-46:/mipmap-xxxhdpi/ic_launcher.webp"
+        "merged": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-merged_res-44:\\layout_activity_contact.xml.flat",
+        "source": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-main-46:\\layout\\activity_contact.xml"
     },
     {
-        "merged": "com.temzotech.app-merged_res-44:/drawable_ic_home.xml.flat",
-        "source": "com.temzotech.app-main-46:/drawable/ic_home.xml"
+        "merged": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-merged_res-44:\\layout_onboarding_slide1.xml.flat",
+        "source": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-main-46:\\layout\\onboarding_slide1.xml"
     },
     {
-        "merged": "com.temzotech.app-merged_res-44:/menu_main_menu.xml.flat",
-        "source": "com.temzotech.app-main-46:/menu/main_menu.xml"
+        "merged": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-merged_res-44:\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-main-46:\\drawable\\ic_launcher_background.xml"
     },
     {
-        "merged": "com.temzotech.app-merged_res-44:/drawable_ic_software.xml.flat",
-        "source": "com.temzotech.app-main-46:/drawable/ic_software.xml"
+        "merged": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-merged_res-44:\\layout_activity_splash.xml.flat",
+        "source": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-main-46:\\layout\\activity_splash.xml"
     },
     {
-        "merged": "com.temzotech.app-merged_res-44:/drawable_ic_printer.xml.flat",
-        "source": "com.temzotech.app-main-46:/drawable/ic_printer.xml"
+        "merged": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-merged_res-44:\\drawable_ic_sign_out.xml.flat",
+        "source": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-main-46:\\drawable\\ic_sign_out.xml"
     },
     {
-        "merged": "com.temzotech.app-merged_res-44:/layout_activity_contact_us.xml.flat",
-        "source": "com.temzotech.app-main-46:/layout/activity_contact_us.xml"
+        "merged": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-merged_res-44:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-main-46:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
     },
     {
-        "merged": "com.temzotech.app-merged_res-44:/layout_onboarding_slide1.xml.flat",
-        "source": "com.temzotech.app-main-46:/layout/onboarding_slide1.xml"
+        "merged": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-merged_res-44:\\font_poppins_bold.xml.flat",
+        "source": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-main-46:\\font\\poppins_bold.xml"
     },
     {
-        "merged": "com.temzotech.app-merged_res-44:/layout_activity_profile.xml.flat",
-        "source": "com.temzotech.app-main-46:/layout/activity_profile.xml"
+        "merged": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-merged_res-44:\\drawable-xhdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-pngs-39:\\drawable-xhdpi\\ic_launcher_foreground.png"
     },
     {
-        "merged": "com.temzotech.app-merged_res-44:/layout_activity_sign_in.xml.flat",
-        "source": "com.temzotech.app-main-46:/layout/activity_sign_in.xml"
+        "merged": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-merged_res-44:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-main-46:\\mipmap-xhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "com.temzotech.app-merged_res-44:/mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "com.temzotech.app-main-46:/mipmap-anydpi-v26/ic_launcher.xml"
+        "merged": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-merged_res-44:\\layout_activity_onboarding.xml.flat",
+        "source": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-main-46:\\layout\\activity_onboarding.xml"
     },
     {
-        "merged": "com.temzotech.app-merged_res-44:/layout_activity_auth.xml.flat",
-        "source": "com.temzotech.app-main-46:/layout/activity_auth.xml"
+        "merged": "com.temzotech.app-merged_res-44:/color_bottom_nav_colors.xml.flat",
+        "source": "com.temzotech.app-main-46:/color/bottom_nav_colors.xml"
     },
     {
-        "merged": "com.temzotech.app-merged_res-44:/drawable-xhdpi_ic_launcher_foreground.png.flat",
-        "source": "com.temzotech.app-pngs-39:/drawable-xhdpi/ic_launcher_foreground.png"
+        "merged": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-merged_res-44:\\drawable_ic_services.xml.flat",
+        "source": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-main-46:\\drawable\\ic_services.xml"
     },
     {
-        "merged": "com.temzotech.app-merged_res-44:/layout_fragment_sign_up.xml.flat",
-        "source": "com.temzotech.app-main-46:/layout/fragment_sign_up.xml"
+        "merged": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-merged_res-44:\\drawable_ic_network.xml.flat",
+        "source": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-main-46:\\drawable\\ic_network.xml"
     },
     {
-        "merged": "com.temzotech.app-merged_res-44:/xml_backup_rules.xml.flat",
-        "source": "com.temzotech.app-main-46:/xml/backup_rules.xml"
+        "merged": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-merged_res-44:\\drawable_ic_desktop.xml.flat",
+        "source": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-main-46:\\drawable\\ic_desktop.xml"
     },
     {
-        "merged": "com.temzotech.app-merged_res-44:/drawable_logo333.png.flat",
-        "source": "com.temzotech.app-main-46:/drawable/logo333.png"
+        "merged": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-merged_res-44:\\layout_fragment_sign_in.xml.flat",
+        "source": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-main-46:\\layout\\fragment_sign_in.xml"
     },
     {
-        "merged": "com.temzotech.app-merged_res-44:/xml_data_extraction_rules.xml.flat",
-        "source": "com.temzotech.app-main-46:/xml/data_extraction_rules.xml"
+        "merged": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-merged_res-44:\\drawable_ic_android.xml.flat",
+        "source": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-main-46:\\drawable\\ic_android.xml"
     },
     {
-        "merged": "com.temzotech.app-merged_res-44:/drawable_ic_computer.xml.flat",
-        "source": "com.temzotech.app-main-46:/drawable/ic_computer.xml"
+        "merged": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-merged_res-44:\\layout_service_item_detailed.xml.flat",
+        "source": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-main-46:\\layout\\service_item_detailed.xml"
     },
     {
-        "merged": "com.temzotech.app-merged_res-44:/anim_button_animation.xml.flat",
-        "source": "com.temzotech.app-main-46:/anim/button_animation.xml"
+        "merged": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-merged_res-44:\\mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-main-46:\\mipmap-xxhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "com.temzotech.app-merged_res-44:/layout_fragment_signup.xml.flat",
-        "source": "com.temzotech.app-main-46:/layout/fragment_signup.xml"
+        "merged": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-merged_res-44:\\layout_onboarding_slide.xml.flat",
+        "source": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-main-46:\\layout\\onboarding_slide.xml"
     },
     {
-        "merged": "com.temzotech.app-merged_res-44:/layout_activity_service_detail.xml.flat",
-        "source": "com.temzotech.app-main-46:/layout/activity_service_detail.xml"
+        "merged": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-merged_res-44:\\layout_promotion_card_item.xml.flat",
+        "source": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-main-46:\\layout\\promotion_card_item.xml"
     },
     {
-        "merged": "com.temzotech.app-merged_res-44:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "com.temzotech.app-main-46:/mipmap-anydpi-v26/ic_launcher_round.xml"
+        "merged": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-merged_res-44:\\font_roboto.xml.flat",
+        "source": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-main-46:\\font\\roboto.xml"
     },
     {
-        "merged": "com.temzotech.app-merged_res-44:/layout_fragment_login.xml.flat",
-        "source": "com.temzotech.app-main-46:/layout/fragment_login.xml"
+        "merged": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-merged_res-44:\\mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-main-46:\\mipmap-mdpi\\ic_launcher.webp"
     },
     {
-        "merged": "com.temzotech.app-merged_res-44:/drawable_ic_laptop.xml.flat",
-        "source": "com.temzotech.app-main-46:/drawable/ic_laptop.xml"
+        "merged": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-merged_res-44:\\xml_backup_rules.xml.flat",
+        "source": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-main-46:\\xml\\backup_rules.xml"
     },
     {
-        "merged": "com.temzotech.app-merged_res-44:/font_roboto_medium.xml.flat",
-        "source": "com.temzotech.app-main-46:/font/roboto_medium.xml"
+        "merged": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-merged_res-44:\\layout_activity_welcome.xml.flat",
+        "source": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-main-46:\\layout\\activity_welcome.xml"
     },
     {
-        "merged": "com.temzotech.app-merged_res-44:/drawable-hdpi_ic_launcher_foreground.png.flat",
-        "source": "com.temzotech.app-pngs-39:/drawable-hdpi/ic_launcher_foreground.png"
+        "merged": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-merged_res-44:\\drawable_scrollbar_thumb.xml.flat",
+        "source": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-main-46:\\drawable\\scrollbar_thumb.xml"
     },
     {
-        "merged": "com.temzotech.app-merged_res-44:/drawable_logo444.png.flat",
-        "source": "com.temzotech.app-main-46:/drawable/logo444.png"
+        "merged": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-merged_res-44:\\drawable_logo.png.flat",
+        "source": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-main-46:\\drawable\\logo.png"
     },
     {
-        "merged": "com.temzotech.app-merged_res-44:/drawable_ic_call.xml.flat",
-        "source": "com.temzotech.app-main-46:/drawable/ic_call.xml"
+        "merged": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-merged_res-44:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-main-46:\\mipmap-anydpi-v26\\ic_launcher.xml"
     },
     {
-        "merged": "com.temzotech.app-merged_res-44:/drawable_ic_service.xml.flat",
-        "source": "com.temzotech.app-main-46:/drawable/ic_service.xml"
+        "merged": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-merged_res-44:\\drawable-ldpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-pngs-39:\\drawable-ldpi\\ic_launcher_foreground.png"
     },
     {
-        "merged": "com.temzotech.app-merged_res-44:/layout_activity_authentication.xml.flat",
-        "source": "com.temzotech.app-main-46:/layout/activity_authentication.xml"
+        "merged": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-merged_res-44:\\anim_button_animation.xml.flat",
+        "source": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-main-46:\\anim\\button_animation.xml"
     },
     {
-        "merged": "com.temzotech.app-merged_res-44:/mipmap-hdpi_ic_launcher_round.webp.flat",
-        "source": "com.temzotech.app-main-46:/mipmap-hdpi/ic_launcher_round.webp"
+        "merged": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-merged_res-44:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-main-46:\\layout\\activity_main.xml"
     },
     {
-        "merged": "com.temzotech.app-merged_res-44:/layout_activity_sign_up.xml.flat",
-        "source": "com.temzotech.app-main-46:/layout/activity_sign_up.xml"
+        "merged": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-merged_res-44:\\drawable-hdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-pngs-39:\\drawable-hdpi\\ic_launcher_foreground.png"
     },
     {
-        "merged": "com.temzotech.app-merged_res-44:/mipmap-xhdpi_ic_launcher.webp.flat",
-        "source": "com.temzotech.app-main-46:/mipmap-xhdpi/ic_launcher.webp"
+        "merged": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-merged_res-44:\\layout_activity_service_detail.xml.flat",
+        "source": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-main-46:\\layout\\activity_service_detail.xml"
     },
     {
-        "merged": "com.temzotech.app-merged_res-44:/font_roboto.xml.flat",
-        "source": "com.temzotech.app-main-46:/font/roboto.xml"
+        "merged": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-merged_res-44:\\drawable_ic_globe.xml.flat",
+        "source": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-main-46:\\drawable\\ic_globe.xml"
     },
     {
-        "merged": "com.temzotech.app-merged_res-44:/drawable-xxxhdpi_ic_launcher_foreground.png.flat",
-        "source": "com.temzotech.app-pngs-39:/drawable-xxxhdpi/ic_launcher_foreground.png"
+        "merged": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-merged_res-44:\\layout_activity_auth.xml.flat",
+        "source": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-main-46:\\layout\\activity_auth.xml"
     },
     {
-        "merged": "com.temzotech.app-merged_res-44:/drawable_ic_desktop.xml.flat",
-        "source": "com.temzotech.app-main-46:/drawable/ic_desktop.xml"
+        "merged": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-merged_res-44:\\layout_activity_service_request.xml.flat",
+        "source": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-main-46:\\layout\\activity_service_request.xml"
     },
     {
-        "merged": "com.temzotech.app-merged_res-44:/layout_activity_welcome.xml.flat",
-        "source": "com.temzotech.app-main-46:/layout/activity_welcome.xml"
+        "merged": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-merged_res-44:\\drawable-xxxhdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-pngs-39:\\drawable-xxxhdpi\\ic_launcher_foreground.png"
     },
     {
-        "merged": "com.temzotech.app-merged_res-44:/drawable_ic_email.xml.flat",
-        "source": "com.temzotech.app-main-46:/drawable/ic_email.xml"
+        "merged": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-merged_res-44:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-main-46:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "com.temzotech.app-merged_res-44:/layout_activity_splash.xml.flat",
-        "source": "com.temzotech.app-main-46:/layout/activity_splash.xml"
+        "merged": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-merged_res-44:\\layout_activity_profile.xml.flat",
+        "source": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-main-46:\\layout\\activity_profile.xml"
     },
     {
-        "merged": "com.temzotech.app-merged_res-44:/drawable-ldpi_ic_launcher_foreground.png.flat",
-        "source": "com.temzotech.app-pngs-39:/drawable-ldpi/ic_launcher_foreground.png"
+        "merged": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-merged_res-44:\\menu_bottom_nav_menu.xml.flat",
+        "source": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-main-46:\\menu\\bottom_nav_menu.xml"
     },
     {
-        "merged": "com.temzotech.app-merged_res-44:/drawable-xxhdpi_ic_launcher_foreground.png.flat",
-        "source": "com.temzotech.app-pngs-39:/drawable-xxhdpi/ic_launcher_foreground.png"
+        "merged": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-merged_res-44:\\layout_service_item.xml.flat",
+        "source": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-main-46:\\layout\\service_item.xml"
     },
     {
-        "merged": "com.temzotech.app-merged_res-44:/drawable_splash_background.xml.flat",
-        "source": "com.temzotech.app-main-46:/drawable/splash_background.xml"
+        "merged": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-merged_res-44:\\menu_main_menu.xml.flat",
+        "source": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-main-46:\\menu\\main_menu.xml"
     },
     {
-        "merged": "com.temzotech.app-merged_res-44:/mipmap-xhdpi_ic_launcher_round.webp.flat",
-        "source": "com.temzotech.app-main-46:/mipmap-xhdpi/ic_launcher_round.webp"
+        "merged": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-merged_res-44:\\layout_activity_contact_us.xml.flat",
+        "source": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-main-46:\\layout\\activity_contact_us.xml"
     },
     {
-        "merged": "com.temzotech.app-merged_res-44:/drawable_scrollbar_thumb.xml.flat",
-        "source": "com.temzotech.app-main-46:/drawable/scrollbar_thumb.xml"
+        "merged": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-merged_res-44:\\mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-main-46:\\mipmap-mdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "com.temzotech.app-merged_res-44:/layout_onboarding_slide3.xml.flat",
-        "source": "com.temzotech.app-main-46:/layout/onboarding_slide3.xml"
+        "merged": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-merged_res-44:\\layout_fragment_sign_up.xml.flat",
+        "source": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-main-46:\\layout\\fragment_sign_up.xml"
     },
     {
-        "merged": "com.temzotech.app-merged_res-44:/drawable_ic_launcher_background.xml.flat",
-        "source": "com.temzotech.app-main-46:/drawable/ic_launcher_background.xml"
+        "merged": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-merged_res-44:\\layout_activity_authentication.xml.flat",
+        "source": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-main-46:\\layout\\activity_authentication.xml"
     },
     {
-        "merged": "com.temzotech.app-merged_res-44:/drawable_ic_contact.xml.flat",
-        "source": "com.temzotech.app-main-46:/drawable/ic_contact.xml"
+        "merged": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-merged_res-44:\\drawable_ic_service.xml.flat",
+        "source": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-main-46:\\drawable\\ic_service.xml"
     },
     {
-        "merged": "com.temzotech.app-merged_res-44:/font_poppins_bold.xml.flat",
-        "source": "com.temzotech.app-main-46:/font/poppins_bold.xml"
+        "merged": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-merged_res-44:\\drawable_ic_laptop.xml.flat",
+        "source": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-main-46:\\drawable\\ic_laptop.xml"
     },
     {
-        "merged": "com.temzotech.app-merged_res-44:/mipmap-mdpi_ic_launcher.webp.flat",
-        "source": "com.temzotech.app-main-46:/mipmap-mdpi/ic_launcher.webp"
+        "merged": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-merged_res-44:\\drawable_logo444.png.flat",
+        "source": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-main-46:\\drawable\\logo444.png"
     },
     {
-        "merged": "com.temzotech.app-merged_res-44:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
-        "source": "com.temzotech.app-main-46:/mipmap-xxhdpi/ic_launcher_round.webp"
+        "merged": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-merged_res-44:\\drawable_ic_home.xml.flat",
+        "source": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-main-46:\\drawable\\ic_home.xml"
     },
     {
-        "merged": "com.temzotech.app-merged_res-44:/layout_activity_contact.xml.flat",
-        "source": "com.temzotech.app-main-46:/layout/activity_contact.xml"
+        "merged": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-merged_res-44:\\font_roboto_medium.xml.flat",
+        "source": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-main-46:\\font\\roboto_medium.xml"
+    },
+    {
+        "merged": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-merged_res-44:\\layout_onboarding_slide3.xml.flat",
+        "source": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-main-46:\\layout\\onboarding_slide3.xml"
+    },
+    {
+        "merged": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-merged_res-44:\\drawable-mdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-pngs-39:\\drawable-mdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-merged_res-44:\\layout_fragment_login.xml.flat",
+        "source": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-main-46:\\layout\\fragment_login.xml"
+    },
+    {
+        "merged": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-merged_res-44:\\layout_fragment_signup.xml.flat",
+        "source": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-main-46:\\layout\\fragment_signup.xml"
+    },
+    {
+        "merged": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-merged_res-44:\\drawable_ic_computer.xml.flat",
+        "source": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-main-46:\\drawable\\ic_computer.xml"
+    },
+    {
+        "merged": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-merged_res-44:\\drawable_ic_software.xml.flat",
+        "source": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-main-46:\\drawable\\ic_software.xml"
+    },
+    {
+        "merged": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-merged_res-44:\\drawable_ic_printer.xml.flat",
+        "source": "C:\\Users\\Temzo Tech\\.gradle\\daemon\\8.4\\com.temzotech.app-main-46:\\drawable\\ic_printer.xml"
     },
     {
         "merged": "com.temzotech.app-merged_res-44:/layout_activity_main.xml.flat",
         "source": "com.temzotech.app-main-46:/layout/activity_main.xml"
-    },
-    {
-        "merged": "com.temzotech.app-merged_res-44:/layout_activity_onboarding.xml.flat",
-        "source": "com.temzotech.app-main-46:/layout/activity_onboarding.xml"
     }
 ]

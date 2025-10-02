@@ -78,6 +78,8 @@ animator mtrl_fab_hide_motion_spec
 animator mtrl_fab_show_motion_spec
 animator mtrl_fab_transformation_sheet_collapse_spec
 animator mtrl_fab_transformation_sheet_expand_spec
+array service_categories
+array services_array
 attr SharedValue
 attr SharedValueId
 attr actionBarDivider
@@ -3040,6 +3042,7 @@ drawable error
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
 drawable gradient
+drawable gradient_overlay
 drawable ic_android
 drawable ic_arrow_back_black_24
 drawable ic_call
@@ -3277,6 +3280,7 @@ id btnSignUp
 id btnSignUpWelcome
 id buttonCallNow
 id buttonPanel
+id buttonRequest
 id buttonSendEmail
 id buttonSignIn
 id buttonSignUp
@@ -3286,6 +3290,7 @@ id call_now_button
 id cancel_button
 id cardCall
 id cardEmail
+id cardRequestService
 id carryVelocity
 id center
 id centerCrop
@@ -3299,12 +3304,15 @@ id checkbox
 id checked
 id chronometer
 id circle_center
+id claim_offer_button
 id clear_text
 id clip_horizontal
 id clip_vertical
 id clockwise
 id closest
 id collapseActionView
+id collapsingToolbarLayout
+id company_logo
 id compress
 id confirm_button
 id constraint
@@ -3314,6 +3322,7 @@ id contentPanel
 id contiguous
 id continuousVelocity
 id coordinator
+id coordinatorLayout
 id cos
 id counterclockwise
 id cradle
@@ -3383,6 +3392,7 @@ id fill
 id fill_horizontal
 id fill_vertical
 id filled
+id filterSpinner
 id first_name_edit_text
 id fitCenter
 id fitEnd
@@ -3424,7 +3434,6 @@ id ignoreRequest
 id image
 id imageView
 id imageViewLogo
-id image_slider
 id image_view
 id immediateStop
 id included
@@ -3449,6 +3458,7 @@ id linear
 id linear_layout
 id listMode
 id list_item
+id loading_progress_bar
 id login_progress_bar
 id logo
 id m3_side_sheet
@@ -3567,17 +3577,22 @@ id pathRelative
 id peekHeight
 id percent
 id pin
+id popularServicesRecyclerView
 id position
 id postLayout
 id pressed
-id profileIcon
 id profileImage
 id profileListView
 id progressBar
 id progress_circular
 id progress_horizontal
+id promotion_description
+id promotion_image
+id promotion_title
+id promotionsRecyclerView
 id radio
 id ratio
+id recommendedRecyclerView
 id rectangles
 id report_drawn
 id reverseSawtooth
@@ -3597,6 +3612,7 @@ id scrollIndicatorDown
 id scrollIndicatorUp
 id scrollView
 id scrollable
+id searchView
 id search_badge
 id search_bar
 id search_button
@@ -3607,10 +3623,12 @@ id search_mag_icon
 id search_plate
 id search_src_text
 id search_voice_btn
+id seeAllServicesButton
 id select_dialog_listview
 id selected
 id selection_type
 id send_email_button
+id service_description
 id service_detail_description
 id service_detail_icon
 id service_detail_name
@@ -3625,6 +3643,7 @@ id showCustom
 id showHome
 id showTitle
 id sign_in_button
+id signup_progress_bar
 id sin
 id skipCollapsed
 id skipped
@@ -3687,6 +3706,7 @@ id textTop
 id textViewContactUs
 id textViewDate
 id textViewPhrase
+id textViewSelectServices
 id textViewServiceRequest
 id textViewSignIn
 id textViewSignUp
@@ -3872,6 +3892,7 @@ layout activity_onboarding
 layout activity_profile
 layout activity_service_detail
 layout activity_service_request
+layout activity_services
 layout activity_sign_in
 layout activity_sign_up
 layout activity_splash
@@ -3962,10 +3983,12 @@ layout onboarding_slide1
 layout onboarding_slide2
 layout onboarding_slide3
 layout pager_row
+layout promotion_card_item
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout service_item
+layout service_item_detailed
 layout spring_dot_layout
 layout support_simple_spinner_dropdown_item
 layout worm_dot_layout
@@ -4049,7 +4072,6 @@ string google_api_key
 string google_app_id
 string google_crash_reporting_api_key
 string google_storage_bucket
-string hello
 string hide_bottom_view_on_scroll_behavior
 string icon_content_description
 string item_view_role_description

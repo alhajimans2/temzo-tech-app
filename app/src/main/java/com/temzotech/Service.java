@@ -7,11 +7,13 @@ public class Service implements Serializable {
     private String name;
     private int icon;
     private String description;
+    private String category;
 
-    public Service(String name, int icon, String description) {
+    public Service(String name, int icon, String description, String category) {
         this.name = name;
         this.icon = icon;
         this.description = description;
+        this.category = category;
     }
 
     public String getName() {
@@ -24,5 +26,9 @@ public class Service implements Serializable {
 
     public String getDescription() {
         return description;
+    }
+
+    public String getCategory() {
+        return category;
     }
 }

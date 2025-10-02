@@ -44,8 +44,14 @@
             android:exported="false" />
 
         <activity
+            android:name=".ServicesActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+
+        <activity
             android:name=".ContactUsActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:parentActivityName=".MainActivity" />
 
     </application>
 

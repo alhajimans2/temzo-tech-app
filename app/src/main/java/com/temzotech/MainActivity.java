@@ -18,11 +18,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.denzcoskun.imageslider.ImageSlider;
-import com.denzcoskun.imageslider.constants.ScaleTypes;
-import com.denzcoskun.imageslider.models.SlideModel;
+import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -31,7 +30,7 @@ import com.google.firebase.auth.FirebaseUser;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements ServicesAdapter.OnItemClickListener, NavigationBarView.OnItemSelectedListener {
+public class MainActivity extends AppCompatActivity implements ServicesAdapter.OnItemClickListener, PromotionsAdapter.OnItemClickListener, NavigationBarView.OnItemSelectedListener {
 
     private CoordinatorLayout coordinatorLayout;
     private ProgressBar loadingProgressBar;
@@ -55,6 +54,8 @@ public class MainActivity extends AppCompatActivity implements ServicesAdapter.O
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        CollapsingToolbarLayout collapsingToolbarLayout = findViewById(R.id.collapsingToolbarLayout);
+
         // Welcome Message
         TextView welcomeText = findViewById(R.id.welcome_text);
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
@@ -64,37 +65,42 @@ public class MainActivity extends AppCompatActivity implements ServicesAdapter.O
                 String[] nameParts = displayName.split(" ");
                 String firstName = nameParts[0];
                 welcomeText.setText("Hello, " + firstName + "!");
+                collapsingToolbarLayout.setTitle("Hi, " + firstName + "!");
             } else {
                 welcomeText.setText("Hello!");
+                collapsingToolbarLayout.setTitle("Hi, User!");
             }
+        } else {
+            collapsingToolbarLayout.setTitle("Welcome");
         }
 
-        // Contact Icon
-        ImageView contactIcon = findViewById(R.id.profileIcon);
-        contactIcon.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, ContactUsActivity.class)));
 
-        // Image Slider
-        ImageSlider imageSlider = findViewById(R.id.image_slider);
-        List<SlideModel> slideModels = new ArrayList<>();
-        slideModels.add(new SlideModel(R.drawable.logo, "Laptop Sale Live Now!", ScaleTypes.FIT));
-        slideModels.add(new SlideModel(R.drawable.logo, "Free Consultation for New Clients", ScaleTypes.FIT));
-        imageSlider.setImageList(slideModels, ScaleTypes.FIT);
+        // Recommended Services
+        RecyclerView recommendedRecyclerView = findViewById(R.id.recommendedRecyclerView);
+        recommendedRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+        List<Service> recommendedServiceList = getRecommendedServices();
+        ServicesAdapter recommendedServicesAdapter = new ServicesAdapter(recommendedServiceList, this, ServicesAdapter.ViewType.SIMPLE);
+        recommendedRecyclerView.setAdapter(recommendedServicesAdapter);
 
-        // Services Grid
-        RecyclerView servicesRecyclerView = findViewById(R.id.servicesRecyclerView);
-        servicesRecyclerView.setLayoutManager(new GridLayoutManager(this, 2));
-        List<Service> serviceList = new ArrayList<>();
-        serviceList.add(new Service("Computer Desktops Leasing", R.drawable.ic_computer, "Affordable and flexible leasing options for high-quality desktop computers. Perfect for businesses and individuals."));
-        serviceList.add(new Service("Laptop Sales", R.drawable.ic_laptop, "A wide selection of new and refurbished laptops from top brands. Find the perfect laptop to fit your needs and budget."));
-        serviceList.add(new Service("Web Design/Development", R.drawable.ic_globe, "Professional web design and development services to create a stunning online presence for your business."));
-        serviceList.add(new Service("Networking", R.drawable.ic_network, "Expert network setup, configuration, and troubleshooting services for homes and offices."));
-        serviceList.add(new Service("Software Installations & Fixes", R.drawable.ic_software, "Hassle-free software installation and troubleshooting services. We'll get your software up and running in no time."));
-        serviceList.add(new Service("Android App Development", R.drawable.ic_android, "Custom Android app development services to bring your ideas to life. From concept to launch, we've got you covered."));
-        serviceList.add(new Service("Desktop Sales", R.drawable.ic_desktop, "A wide variety of desktop computers for sale, from basic home PCs to high-performance gaming rigs."));
-        serviceList.add(new Service("Printers & Accessories", R.drawable.ic_printer, "All your printing needs in one place. We offer a wide selection of printers, ink, toner, and other accessories."));
+        // Promotions
+        RecyclerView promotionsRecyclerView = findViewById(R.id.promotionsRecyclerView);
+        promotionsRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+        List<Promotion> promotionList = getPromotions();
+        PromotionsAdapter promotionsAdapter = new PromotionsAdapter(promotionList, this);
+        promotionsRecyclerView.setAdapter(promotionsAdapter);
 
-        ServicesAdapter serviceAdapter = new ServicesAdapter(serviceList, this);
-        servicesRecyclerView.setAdapter(serviceAdapter);
+        // Popular Services
+        RecyclerView popularServicesRecyclerView = findViewById(R.id.popularServicesRecyclerView);
+        popularServicesRecyclerView.setLayoutManager(new GridLayoutManager(this, 2));
+        List<Service> popularServiceList = getPopularServices();
+        ServicesAdapter popularServicesAdapter = new ServicesAdapter(popularServiceList, this, ServicesAdapter.ViewType.SIMPLE);
+        popularServicesRecyclerView.setAdapter(popularServicesAdapter);
+
+        // See All Services
+        Button seeAllServicesButton = findViewById(R.id.seeAllServicesButton);
+        seeAllServicesButton.setOnClickListener(v -> {
+            startActivity(new Intent(MainActivity.this, ServicesActivity.class));
+        });
 
         // Contact Buttons
         Button emailButton = findViewById(R.id.buttonSendEmail);
@@ -124,6 +130,29 @@ public class MainActivity extends AppCompatActivity implements ServicesAdapter.O
         bottomNavigationView.setOnItemSelectedListener(this);
     }
 
+    private List<Service> getPopularServices() {
+        List<Service> serviceList = new ArrayList<>();
+        serviceList.add(new Service("Computer Desktops Leasing", R.drawable.ic_computer, "Affordable and flexible leasing options for high-quality desktop computers. Perfect for businesses and individuals.", "Hardware"));
+        serviceList.add(new Service("Laptop Sales", R.drawable.ic_laptop, "A wide selection of new and refurbished laptops from top brands. Find the perfect laptop to fit your needs and budget.", "Hardware"));
+        serviceList.add(new Service("Web Design/Development", R.drawable.ic_globe, "Professional web design and development services to create a stunning online presence for your business.", "Development"));
+        serviceList.add(new Service("Networking", R.drawable.ic_network, "Expert network setup, configuration, and troubleshooting services for homes and offices.", "Hardware"));
+        return serviceList;
+    }
+
+    private List<Service> getRecommendedServices() {
+        List<Service> serviceList = new ArrayList<>();
+        serviceList.add(new Service("Software Installations & Fixes", R.drawable.ic_software, "Hassle-free software installation and troubleshooting services. We'll get your software up and running in no time.", "Software"));
+        serviceList.add(new Service("Android App Development", R.drawable.ic_android, "Custom Android app development services to bring your ideas to life. From concept to launch, we've got you covered.", "Development"));
+        return serviceList;
+    }
+
+    private List<Promotion> getPromotions() {
+        List<Promotion> promotionList = new ArrayList<>();
+        promotionList.add(new Promotion("Laptop Sale!", "Get up to 20% off on selected laptops.", R.drawable.logo));
+        promotionList.add(new Promotion("Free Consultation", "Free consultation for new clients this month.", R.drawable.logo));
+        return promotionList;
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main_menu, menu);
@@ -149,14 +178,20 @@ public class MainActivity extends AppCompatActivity implements ServicesAdapter.O
     }
 
     @Override
+    public void onPromotionItemClick(Promotion promotion) {
+        // Handle promotion click
+        Toast.makeText(this, "Claiming offer for " + promotion.getTitle(), Toast.LENGTH_SHORT).show();
+    }
+
+
+    @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         int itemId = item.getItemId();
         if (itemId == R.id.nav_home) {
             // Already on the home screen
             return true;
         } else if (itemId == R.id.nav_services) {
-            // You can scroll to the services section if you want
-            Toast.makeText(this, R.string.services_clicked, Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(MainActivity.this, ServicesActivity.class));
             return true;
         } else if (itemId == R.id.nav_contact) {
             startActivity(new Intent(this, ContactUsActivity.class));

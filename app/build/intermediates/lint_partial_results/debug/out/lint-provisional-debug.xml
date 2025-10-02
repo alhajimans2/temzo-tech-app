@@ -193,13 +193,32 @@
         severity="warning"
         message="Consider adding a `&lt;queries>` declaration to your manifest when calling this \&#xA;method; see https://g.co/dev/packagevisibility for details">
         <location
-            file="${:app*debug*sourceProvider*0*javaDir*0}/com/temzotech/ContactUsActivity.java"
-            line="24"
-            column="29"
-            startOffset="863"
-            endLine="24"
-            endColumn="44"
-            endOffset="878"/>
+            file="${:app*debug*sourceProvider*0*javaDir*0}/com/temzotech/ContactActivity.java"
+            line="72"
+            column="24"
+            startOffset="2713"
+            endLine="72"
+            endColumn="39"
+            endOffset="2728"/>
+        <map>
+            <entry
+                name="queryAll"
+                boolean="false"/>
+        </map>
+    </incident>
+
+    <incident
+        id="QueryPermissionsNeeded"
+        severity="warning"
+        message="Consider adding a `&lt;queries>` declaration to your manifest when calling this \&#xA;method; see https://g.co/dev/packagevisibility for details">
+        <location
+            file="${:app*debug*sourceProvider*0*javaDir*0}/com/temzotech/ContactActivity.java"
+            line="83"
+            column="24"
+            startOffset="3192"
+            endLine="83"
+            endColumn="39"
+            endOffset="3207"/>
         <map>
             <entry
                 name="queryAll"
@@ -213,12 +232,88 @@
         message="Consider adding a `&lt;queries>` declaration to your manifest when calling this \&#xA;method; see https://g.co/dev/packagevisibility for details">
         <location
             file="${:app*debug*sourceProvider*0*javaDir*0}/com/temzotech/ContactUsActivity.java"
-            line="34"
+            line="50"
+            column="29"
+            startOffset="1880"
+            endLine="50"
+            endColumn="44"
+            endOffset="1895"/>
+        <map>
+            <entry
+                name="queryAll"
+                boolean="false"/>
+        </map>
+    </incident>
+
+    <incident
+        id="QueryPermissionsNeeded"
+        severity="warning"
+        message="Consider adding a `&lt;queries>` declaration to your manifest when calling this \&#xA;method; see https://g.co/dev/packagevisibility for details">
+        <location
+            file="${:app*debug*sourceProvider*0*javaDir*0}/com/temzotech/ContactUsActivity.java"
+            line="60"
             column="28"
-            startOffset="1287"
-            endLine="34"
+            startOffset="2304"
+            endLine="60"
             endColumn="43"
-            endOffset="1302"/>
+            endOffset="2319"/>
+        <map>
+            <entry
+                name="queryAll"
+                boolean="false"/>
+        </map>
+    </incident>
+
+    <incident
+        id="QueryPermissionsNeeded"
+        severity="warning"
+        message="Consider adding a `&lt;queries>` declaration to your manifest when calling this \&#xA;method; see https://g.co/dev/packagevisibility for details">
+        <location
+            file="${:app*debug*sourceProvider*0*javaDir*0}/com/temzotech/ContactUsActivity.java"
+            line="78"
+            column="33"
+            startOffset="3391"
+            endLine="78"
+            endColumn="48"
+            endOffset="3406"/>
+        <map>
+            <entry
+                name="queryAll"
+                boolean="false"/>
+        </map>
+    </incident>
+
+    <incident
+        id="QueryPermissionsNeeded"
+        severity="warning"
+        message="Consider adding a `&lt;queries>` declaration to your manifest when calling this \&#xA;method; see https://g.co/dev/packagevisibility for details">
+        <location
+            file="${:app*debug*sourceProvider*0*javaDir*0}/com/temzotech/MainActivity.java"
+            line="110"
+            column="24"
+            startOffset="4931"
+            endLine="110"
+            endColumn="39"
+            endOffset="4946"/>
+        <map>
+            <entry
+                name="queryAll"
+                boolean="false"/>
+        </map>
+    </incident>
+
+    <incident
+        id="QueryPermissionsNeeded"
+        severity="warning"
+        message="Consider adding a `&lt;queries>` declaration to your manifest when calling this \&#xA;method; see https://g.co/dev/packagevisibility for details">
+        <location
+            file="${:app*debug*sourceProvider*0*javaDir*0}/com/temzotech/MainActivity.java"
+            line="121"
+            column="24"
+            startOffset="5402"
+            endLine="121"
+            endColumn="39"
+            endOffset="5417"/>
         <map>
             <entry
                 name="queryAll"

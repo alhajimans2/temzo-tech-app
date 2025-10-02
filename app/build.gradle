@@ -29,14 +29,8 @@ android {
     }
 
     packagingOptions {
-        exclude 'res/drawable/ic_android.xml'
-        exclude 'res/drawable/ic_computer.xml'
-        exclude 'res/drawable/ic_desktop.xml'
-        exclude 'res/drawable/ic_globe.xml'
-        exclude 'res/drawable/ic_laptop.xml'
-        exclude 'res/drawable/ic_network.xml'
-        exclude 'res/drawable/ic_printer.xml'
-        exclude 'res/drawable/ic_software.xml'
+        resources.excludes.add('META-INF/AL2.0')
+        resources.excludes.add('META-INF/LGPL2.1')
     }
 
     compileOptions {

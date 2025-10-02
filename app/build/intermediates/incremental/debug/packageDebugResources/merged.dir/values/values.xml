@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="service_categories">
+        <item>All</item>
+        <item>Hardware</item>
+        <item>Software</item>
+        <item>Development</item>
+    </string-array>
+    <string-array name="services_array">
+        <item>Computer Desktops Leasing</item>
+        <item>Laptop Sales</item>
+        <item>Web Design/Development</item>
+        <item>Networking</item>
+        <item>Software Installations &amp; Fixes</item>
+        <item>Android App Development</item>
+        <item>Desktop Sales</item>
+        <item>Printers &amp; Accessories</item>
+    </string-array>
+    <color name="background">#FAFAFA</color>
+    <color name="black">#000000</color>
+    <color name="colorAccent">#FF6F00</color>
+    <color name="colorPrimary">#0D47A1</color>
+    <color name="colorPrimaryVariant">#093A83</color>
+    <color name="colorSecondary">#FF6F00</color>
+    <color name="onBackgroundSurface">#212121</color>
+    <color name="success">#4CAF50</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="text_primary">#212121</color>
+    <color name="text_secondary">#757575</color>
+    <color name="white">#FFFFFF</color>
+    <string name="app_name">TTIT</string>
+    <string name="gcm_defaultSenderId" translatable="false">790775094800</string>
+    <string name="google_api_key" translatable="false">AIzaSyDX6LP76_v6m_Cin2dA5TfVquClY-qbW0s</string>
+    <string name="google_app_id" translatable="false">1:790775094800:android:88ae515d7b77af87b3b495</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyDX6LP76_v6m_Cin2dA5TfVquClY-qbW0s</string>
+    <string name="google_storage_bucket" translatable="false">ttit-807a3.firebasestorage.app</string>
+    <string name="project_id" translatable="false">ttit-807a3</string>
+    <string name="services_clicked">Services clicked</string>
+    <style name="TextAppearance.App.Body1" parent="TextAppearance.MaterialComponents.Body1"/>
+    <style name="TextAppearance.App.Button" parent="TextAppearance.MaterialComponents.Button"/>
+    <style name="TextAppearance.App.Headline1" parent="TextAppearance.MaterialComponents.Headline1"/>
+    <style name="TextAppearance.App.Headline2" parent="TextAppearance.MaterialComponents.Headline2"/>
+    <style name="TextAppearance.App.Headline3" parent="TextAppearance.MaterialComponents.Headline3"/>
+    <style name="TextAppearance.App.Headline4" parent="TextAppearance.MaterialComponents.Headline4"/>
+    <style name="TextAppearance.App.Headline5" parent="TextAppearance.MaterialComponents.Headline5"/>
+    <style name="TextAppearance.App.Headline6" parent="TextAppearance.MaterialComponents.Headline6"/>
+    <style name="Theme.TTIT" parent="Theme.MaterialComponents.Light.NoActionBar">
+        
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorOnPrimary">@color/white</item>
+        
+        <item name="colorSecondary">@color/colorSecondary</item>
+        <item name="colorOnSecondary">@color/white</item>
+        
+        <item name="android:statusBarColor">@color/colorPrimary</item>
+        
+        <item name="android:colorBackground">@color/background</item>
+        <item name="colorSurface">@color/surface</item>
+        <item name="colorOnBackground">@color/text_primary</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+
+        
+        <item name="textAppearanceHeadline1">@style/TextAppearance.App.Headline1</item>
+        <item name="textAppearanceHeadline2">@style/TextAppearance.App.Headline2</item>
+        <item name="textAppearanceHeadline3">@style/TextAppearance.App.Headline3</item>
+        <item name="textAppearanceHeadline4">@style/TextAppearance.App.Headline4</item>
+        <item name="textAppearanceHeadline5">@style/TextAppearance.App.Headline5</item>
+        <item name="textAppearanceHeadline6">@style/TextAppearance.App.Headline6</item>
+        <item name="textAppearanceBody1">@style/TextAppearance.App.Body1</item>
+        <item name="textAppearanceButton">@style/TextAppearance.App.Button</item>
+    </style>
+</resources>

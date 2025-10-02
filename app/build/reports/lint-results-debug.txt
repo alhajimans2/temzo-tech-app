@@ -1,0 +1,563 @@
+F:\ANDROID APPS\TTIT\app\build.gradle:13: Warning: Not targeting the latest versions of Android; compatibility modes apply. Consider testing and updating this version. Consult the android.os.Build.VERSION_CODES javadoc for details. [OldTargetApi]
+        targetSdk 34
+        ~~~~~~~~~~~~
+
+   Explanation for issues of type "OldTargetApi":
+   When your application runs on a version of Android that is more recent than
+   your targetSdkVersion specifies that it has been tested with, various
+   compatibility modes kick in. This ensures that your application continues
+   to work, but it may look out of place. For example, if the targetSdkVersion
+   is less than 14, your app may get an option button in the UI.
+
+   To fix this issue, set the targetSdkVersion to the highest available value.
+   Then test your app to make sure everything works correctly. You may want to
+   consult the compatibility notes to see what changes apply to each version
+   you are adding support for:
+   https://developer.android.com/reference/android/os/Build.VERSION_CODES.html
+   as well as follow this guide:
+   https://developer.android.com/distribute/best-practices/develop/target-sdk.
+   html
+
+   https://developer.android.com/distribute/best-practices/develop/target-sdk.html
+
+F:\ANDROID APPS\TTIT\app\src\main\java\com\temzotech\SplashActivity.java:9: Warning: The application should not provide its own launch screen [CustomSplashScreen]
+public class SplashActivity extends AppCompatActivity {
+             ~~~~~~~~~~~~~~
+
+   Explanation for issues of type "CustomSplashScreen":
+   Starting in Android 12 (API 31+), the application's Launch Screen is
+   provided by the system and the application should not create its own,
+   otherwise the user will see two splashscreens. Please check the
+   SplashScreen class to check how the Splash Screen can be controlled and
+   customized.
+
+   https://developer.android.com/guide/topics/ui/splash-screen
+
+F:\ANDROID APPS\TTIT\app\src\main\java\com\temzotech\ContactUsActivity.java:24: Warning: Consider adding a <queries> declaration to your manifest when calling this method; see https://g.co/dev/packagevisibility for details [QueryPermissionsNeeded]
+            if (emailIntent.resolveActivity(getPackageManager()) != null) {
+                            ~~~~~~~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\java\com\temzotech\ContactUsActivity.java:34: Warning: Consider adding a <queries> declaration to your manifest when calling this method; see https://g.co/dev/packagevisibility for details [QueryPermissionsNeeded]
+            if (callIntent.resolveActivity(getPackageManager()) != null) {
+                           ~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "QueryPermissionsNeeded":
+   Apps that target Android 11 cannot query or interact with other installed
+   apps by default. If you need to query or interact with other installed
+   apps, you may need to add a <queries> declaration in your manifest.
+
+   As a corollary, the methods PackageManager#getInstalledPackages and
+   PackageManager#getInstalledApplications will no longer return information
+   about all installed apps. To query specific apps or types of apps, you can
+   use methods like PackageManager#getPackageInfo or
+   PackageManager#queryIntentActivities.
+
+   https://g.co/dev/packagevisibility
+
+F:\ANDROID APPS\TTIT\app\build.gradle:49: Warning: A newer version of androidx.appcompat:appcompat than 1.6.1 is available: 1.7.1 [GradleDependency]
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\build.gradle:50: Warning: A newer version of com.google.android.material:material than 1.10.0 is available: 1.13.0 [GradleDependency]
+    implementation 'com.google.android.material:material:1.10.0'
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\build.gradle:51: Warning: A newer version of androidx.constraintlayout:constraintlayout than 2.1.4 is available: 2.2.1 [GradleDependency]
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\build.gradle:52: Warning: A newer version of androidx.viewpager2:viewpager2 than 1.0.0 is available: 1.1.0 [GradleDependency]
+    implementation 'androidx.viewpager2:viewpager2:1.0.0'
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\build.gradle:53: Warning: A newer version of com.tbuonomo:dotsindicator than 4.3 is available: 5.1.0 [GradleDependency]
+    implementation 'com.tbuonomo:dotsindicator:4.3'
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\build.gradle:58: Warning: A newer version of com.google.firebase:firebase-bom than 33.1.0 is available: 34.3.0 [GradleDependency]
+    implementation platform('com.google.firebase:firebase-bom:33.1.0')
+                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\build.gradle:64: Warning: A newer version of androidx.test.ext:junit than 1.1.5 is available: 1.3.0 [GradleDependency]
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\build.gradle:65: Warning: A newer version of androidx.test.espresso:espresso-core than 3.5.1 is available: 3.7.0 [GradleDependency]
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "GradleDependency":
+   This detector looks for usages of libraries where the version you are using
+   is not the current stable release. Using older versions is fine, and there
+   are cases where you deliberately want to stick with an older version.
+   However, you may simply not be aware that a more recent version is
+   available, and that is what this lint check helps find.
+
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\service_item.xml:10: Warning: This tag and its children can be replaced by one <TextView/> and a compound drawable [UseCompoundDrawables]
+    <LinearLayout
+     ~~~~~~~~~~~~
+
+   Explanation for issues of type "UseCompoundDrawables":
+   A LinearLayout which contains an ImageView and a TextView can be more
+   efficiently handled as a compound drawable (a single TextView, using the
+   drawableTop, drawableLeft, drawableRight and/or drawableBottom attributes
+   to draw one or more images adjacent to the text).
+
+   If the two widgets are offset from each other with margins, this can be
+   replaced with a drawablePadding attribute.
+
+   There's a lint quickfix to perform this conversion in the Eclipse plugin.
+
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\activity_auth.xml:7: Warning: Possible overdraw: Root element paints background @color/background with a theme that also paints a background (inferred theme is @style/Theme.TTIT) [Overdraw]
+    android:background="@color/background"
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\activity_authentication.xml:7: Warning: Possible overdraw: Root element paints background @color/background with a theme that also paints a background (inferred theme is @style/Theme.TTIT) [Overdraw]
+    android:background="@color/background"
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\activity_contact_us.xml:7: Warning: Possible overdraw: Root element paints background @color/white with a theme that also paints a background (inferred theme is @style/Theme.TTIT) [Overdraw]
+    android:background="@color/white"
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\activity_main.xml:7: Warning: Possible overdraw: Root element paints background @color/background with a theme that also paints a background (inferred theme is @style/Theme.TTIT) [Overdraw]
+    android:background="@color/background"
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\activity_profile.xml:8: Warning: Possible overdraw: Root element paints background @color/background with a theme that also paints a background (inferred theme is @style/Theme.TTIT) [Overdraw]
+    android:background="@color/background"
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\activity_service_request.xml:7: Warning: Possible overdraw: Root element paints background @color/white with a theme that also paints a background (inferred theme is @style/Theme.TTIT) [Overdraw]
+    android:background="@color/white"
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\activity_sign_in.xml:7: Warning: Possible overdraw: Root element paints background @color/white with a theme that also paints a background (inferred theme is @style/Theme.TTIT) [Overdraw]
+    android:background="@color/white"
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\activity_sign_up.xml:7: Warning: Possible overdraw: Root element paints background @color/white with a theme that also paints a background (inferred theme is @style/Theme.TTIT) [Overdraw]
+    android:background="@color/white"
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\activity_welcome.xml:7: Warning: Possible overdraw: Root element paints background @color/white with a theme that also paints a background (inferred theme is @style/Theme.TTIT) [Overdraw]
+    android:background="@color/white"
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\fragment_sign_in.xml:7: Warning: Possible overdraw: Root element paints background @color/background with a theme that also paints a background (inferred theme is @style/Theme.TTIT) [Overdraw]
+    android:background="@color/background"
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\fragment_sign_up.xml:7: Warning: Possible overdraw: Root element paints background @color/background with a theme that also paints a background (inferred theme is @style/Theme.TTIT) [Overdraw]
+    android:background="@color/background"
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\onboarding_slide1.xml:6: Warning: Possible overdraw: Root element paints background @color/background with a theme that also paints a background (inferred theme is @style/Theme.TTIT) [Overdraw]
+    android:background="@color/background">
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\onboarding_slide2.xml:6: Warning: Possible overdraw: Root element paints background @color/background with a theme that also paints a background (inferred theme is @style/Theme.TTIT) [Overdraw]
+    android:background="@color/background">
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\onboarding_slide3.xml:6: Warning: Possible overdraw: Root element paints background @color/background with a theme that also paints a background (inferred theme is @style/Theme.TTIT) [Overdraw]
+    android:background="@color/background">
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "Overdraw":
+   If you set a background drawable on a root view, then you should use a
+   custom theme where the theme background is null. Otherwise, the theme
+   background will be painted first, only to have your custom background
+   completely cover it; this is called "overdraw".
+
+   NOTE: This detector relies on figuring out which layouts are associated
+   with which activities based on scanning the Java code, and it's currently
+   doing that using an inexact pattern matching algorithm. Therefore, it can
+   incorrectly conclude which activity the layout is associated with and then
+   wrongly complain that a background-theme is hidden.
+
+   If you want your custom background on multiple pages, then you should
+   consider making a custom theme with your custom background and just using
+   that theme instead of a root element background.
+
+   Of course it's possible that your custom drawable is translucent and you
+   want it to be mixed with the background. However, you will get better
+   performance if you pre-mix the background with your drawable and use that
+   resulting image or color as a custom theme background instead.
+
+F:\ANDROID APPS\TTIT\app\src\main\res\anim\button_animation.xml:2: Warning: The resource R.anim.button_animation appears to be unused [UnusedResources]
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+^
+F:\ANDROID APPS\TTIT\app\src\main\res\values\colors.xml:6: Warning: The resource R.color.colorAccent appears to be unused [UnusedResources]
+    <color name="colorAccent">#FF6F00</color>
+           ~~~~~~~~~~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\values\colors.xml:12: Warning: The resource R.color.success appears to be unused [UnusedResources]
+    <color name="success">#4CAF50</color>
+           ~~~~~~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\fragment_sign_up.xml:2: Warning: The resource R.layout.fragment_sign_up appears to be unused [UnusedResources]
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+^
+F:\ANDROID APPS\TTIT\app\src\main\res\mipmap-anydpi-v26\ic_launcher.xml:2: Warning: The resource R.mipmap.ic_launcher appears to be unused [UnusedResources]
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+^
+F:\ANDROID APPS\TTIT\app\src\main\res\drawable\ic_launcher_background.xml:2: Warning: The resource R.drawable.ic_launcher_background appears to be unused [UnusedResources]
+<vector
+^
+F:\ANDROID APPS\TTIT\app\src\main\res\drawable\ic_launcher_foreground.xml:1: Warning: The resource R.drawable.ic_launcher_foreground appears to be unused [UnusedResources]
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+^
+F:\ANDROID APPS\TTIT\app\src\main\res\mipmap-anydpi-v26\ic_launcher_round.xml:2: Warning: The resource R.mipmap.ic_launcher_round appears to be unused [UnusedResources]
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+^
+F:\ANDROID APPS\TTIT\app\src\main\res\drawable\ic_service.xml:1: Warning: The resource R.drawable.ic_service appears to be unused [UnusedResources]
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+^
+F:\ANDROID APPS\TTIT\app\src\main\res\drawable\ic_sign_out.xml:1: Warning: The resource R.drawable.ic_sign_out appears to be unused [UnusedResources]
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+^
+F:\ANDROID APPS\TTIT\app\src\main\res\drawable\logo333.png: Warning: The resource R.drawable.logo333 appears to be unused [UnusedResources]
+F:\ANDROID APPS\TTIT\app\src\main\res\drawable\logo444.png: Warning: The resource R.drawable.logo444 appears to be unused [UnusedResources]
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\onboarding_slide1.xml:2: Warning: The resource R.layout.onboarding_slide1 appears to be unused [UnusedResources]
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+^
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\onboarding_slide2.xml:2: Warning: The resource R.layout.onboarding_slide2 appears to be unused [UnusedResources]
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+^
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\onboarding_slide3.xml:2: Warning: The resource R.layout.onboarding_slide3 appears to be unused [UnusedResources]
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+^
+F:\ANDROID APPS\TTIT\app\src\main\res\font\poppins_bold.xml:2: Warning: The resource R.font.poppins_bold appears to be unused [UnusedResources]
+<font-family xmlns:android="http://schemas.android.com/apk/res/android">
+^
+F:\ANDROID APPS\TTIT\app\src\main\res\font\roboto.xml:2: Warning: The resource R.font.roboto appears to be unused [UnusedResources]
+<font-family xmlns:android="http://schemas.android.com/apk/res/android">
+^
+F:\ANDROID APPS\TTIT\app\src\main\res\font\roboto_medium.xml:2: Warning: The resource R.font.roboto_medium appears to be unused [UnusedResources]
+<font-family xmlns:android="http://schemas.android.com/apk/res/android">
+^
+
+   Explanation for issues of type "UnusedResources":
+   Unused resources make applications larger and slow down builds.
+
+
+   The unused resource check can ignore tests. If you want to include
+   resources that are only referenced from tests, consider packaging them in a
+   test source set instead.
+
+   You can include test sources in the unused resource check by setting the
+   system property lint.unused-resources.include-tests =true, and to exclude
+   them (usually for performance reasons), use
+   lint.unused-resources.exclude-tests =true.
+   ,
+
+F:\ANDROID APPS\TTIT\app\src\main\res\drawable\logo.png: Warning: Launcher icon used as round icon did not have a circular shape [IconLauncherShape]
+
+   Explanation for issues of type "IconLauncherShape":
+   According to the Android Design Guide
+   (https://material.io/design/iconography/) your launcher icons should "use a
+   distinct silhouette", a "three-dimensional, front view, with a slight
+   perspective as if viewed from above, so that users perceive some depth."
+
+   The unique silhouette implies that your launcher icon should not be a
+   filled square.
+
+F:\ANDROID APPS\TTIT\app\src\main\res\drawable\logo.png: Warning: Found bitmap drawable res/drawable/logo.png in densityless folder [IconLocation]
+F:\ANDROID APPS\TTIT\app\src\main\res\drawable\logo333.png: Warning: Found bitmap drawable res/drawable/logo333.png in densityless folder [IconLocation]
+F:\ANDROID APPS\TTIT\app\src\main\res\drawable\logo444.png: Warning: Found bitmap drawable res/drawable/logo444.png in densityless folder [IconLocation]
+
+   Explanation for issues of type "IconLocation":
+   The res/drawable folder is intended for density-independent graphics such
+   as shapes defined in XML. For bitmaps, move it to drawable-mdpi and
+   consider providing higher and lower resolution versions in drawable-ldpi,
+   drawable-hdpi and drawable-xhdpi. If the icon really is density independent
+   (for example a solid color) you can place it in drawable-nodpi.
+
+   https://developer.android.com/guide/practices/screens_support.html
+
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\activity_main.xml:104: Warning: Buttons in button bars should be borderless; use style="?android:attr/buttonBarButtonStyle" (and ?android:attr/buttonBarStyle on the parent) [ButtonStyle]
+                        <Button
+                         ~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\activity_main.xml:116: Warning: Buttons in button bars should be borderless; use style="?android:attr/buttonBarButtonStyle" (and ?android:attr/buttonBarStyle on the parent) [ButtonStyle]
+                        <Button
+                         ~~~~~~
+
+   Explanation for issues of type "ButtonStyle":
+   Button bars typically use a borderless style for the buttons. Set the
+   style="?android:attr/buttonBarButtonStyle" attribute on each of the
+   buttons, and set style="?android:attr/buttonBarStyle" on the parent layout
+
+   https://material.io/components/dialogs/
+
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\activity_auth.xml:28: Warning: Missing contentDescription attribute on image [ContentDescription]
+            <ImageView
+             ~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\activity_contact_us.xml:44: Warning: Missing contentDescription attribute on image [ContentDescription]
+            <ImageView
+             ~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\activity_contact_us.xml:90: Warning: Missing contentDescription attribute on image [ContentDescription]
+            <ImageView
+             ~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\activity_main.xml:29: Warning: Missing contentDescription attribute on image [ContentDescription]
+            <ImageView
+             ~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\activity_profile.xml:23: Warning: Missing contentDescription attribute on image [ContentDescription]
+    <ImageView
+     ~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\activity_service_detail.xml:24: Warning: Missing contentDescription attribute on image [ContentDescription]
+        <ImageView
+         ~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\activity_splash.xml:9: Warning: Missing contentDescription attribute on image [ContentDescription]
+    <ImageView
+     ~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\activity_welcome.xml:10: Warning: Missing contentDescription attribute on image [ContentDescription]
+    <ImageView
+     ~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\onboarding_slide.xml:7: Warning: Missing contentDescription attribute on image [ContentDescription]
+    <ImageView
+     ~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\onboarding_slide1.xml:8: Warning: Missing contentDescription attribute on image [ContentDescription]
+    <ImageView
+     ~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\onboarding_slide2.xml:19: Warning: Missing contentDescription attribute on image [ContentDescription]
+        <ImageView
+         ~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\onboarding_slide2.xml:25: Warning: Missing contentDescription attribute on image [ContentDescription]
+        <ImageView
+         ~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\onboarding_slide2.xml:31: Warning: Missing contentDescription attribute on image [ContentDescription]
+        <ImageView
+         ~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\onboarding_slide2.xml:37: Warning: Missing contentDescription attribute on image [ContentDescription]
+        <ImageView
+         ~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\onboarding_slide3.xml:8: Warning: Missing contentDescription attribute on image [ContentDescription]
+    <ImageView
+     ~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\service_item.xml:16: Warning: Missing contentDescription attribute on image [ContentDescription]
+        <ImageView
+         ~~~~~~~~~
+
+   Explanation for issues of type "ContentDescription":
+   Non-textual widgets like ImageViews and ImageButtons should use the
+   contentDescription attribute to specify a textual description of the widget
+   such that screen readers and other accessibility tools can adequately
+   describe the user interface.
+
+   Note that elements in application screens that are purely decorative and do
+   not provide any content or enable a user action should not have
+   accessibility content descriptions. In this case, set their descriptions to
+   @null. If your app's minSdkVersion is 16 or higher, you can instead set
+   these graphical elements' android:importantForAccessibility attributes to
+   no.
+
+   Note that for text fields, you should not set both the hint and the
+   contentDescription attributes since the hint will never be shown. Just set
+   the hint.
+
+   https://developer.android.com/guide/topics/ui/accessibility/apps#special-cases
+
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\activity_contact.xml:38: Warning: Missing accessibility label: provide either a view with an android:labelFor that references this view or provide an android:hint [LabelFor]
+            <AutoCompleteTextView
+             ~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "LabelFor":
+   Editable text fields should provide an android:hint or, provided your
+   minSdkVersion is at least 17, they may be referenced by a view with a
+   android:labelFor attribute.
+
+   When using android:labelFor, be sure to provide an android:text or an
+   android:contentDescription.
+
+   If your view is labeled but by a label in a different layout which includes
+   this one, just suppress this warning from lint.
+
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\activity_contact.xml:27: Warning: Hardcoded string "Contact Us", should use @string resource [HardcodedText]
+            android:text="Contact Us"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\activity_contact.xml:36: Warning: Hardcoded string "Select a Service", should use @string resource [HardcodedText]
+            android:hint="Select a Service">
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\activity_contact.xml:50: Warning: Hardcoded string "Your Message", should use @string resource [HardcodedText]
+            android:hint="Your Message">
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\activity_contact.xml:66: Warning: Hardcoded string "Send Email", should use @string resource [HardcodedText]
+            android:text="Send Email"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\activity_contact.xml:73: Warning: Hardcoded string "OR", should use @string resource [HardcodedText]
+            android:text="OR"
+            ~~~~~~~~~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\activity_contact.xml:82: Warning: Hardcoded string "Call Us Now", should use @string resource [HardcodedText]
+            android:text="Call Us Now"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\activity_contact_us.xml:14: Warning: Hardcoded string "Contact Us", should use @string resource [HardcodedText]
+        android:text="Contact Us"
+        ~~~~~~~~~~~~~~~~~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\activity_contact_us.xml:57: Warning: Hardcoded string "Email Us", should use @string resource [HardcodedText]
+                android:text="Email Us"
+                ~~~~~~~~~~~~~~~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\activity_contact_us.xml:103: Warning: Hardcoded string "Call Us", should use @string resource [HardcodedText]
+                android:text="Call Us"
+                ~~~~~~~~~~~~~~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\activity_main.xml:25: Warning: Hardcoded string "Hello, User!", should use @string resource [HardcodedText]
+                android:text="Hello, User!"
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\activity_main.xml:93: Warning: Hardcoded string "Need Immediate Help?", should use @string resource [HardcodedText]
+                        android:text="Need Immediate Help?"
+                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\activity_main.xml:109: Warning: Hardcoded string "Send us an Email", should use @string resource [HardcodedText]
+                            android:text="Send us an Email"
+                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\activity_main.xml:121: Warning: Hardcoded string "Call Us Now", should use @string resource [HardcodedText]
+                            android:text="Call Us Now"
+                            ~~~~~~~~~~~~~~~~~~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\activity_onboarding.xml:37: Warning: Hardcoded string "GET STARTED", should use @string resource [HardcodedText]
+        android:text="GET STARTED"
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\activity_profile.xml:37: Warning: Hardcoded string "User Name", should use @string resource [HardcodedText]
+        android:text="User Name"
+        ~~~~~~~~~~~~~~~~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\activity_profile.xml:47: Warning: Hardcoded string "user.email@example.com", should use @string resource [HardcodedText]
+        android:text="user.email@example.com"
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\activity_service_request.xml:15: Warning: Hardcoded string "Request a Service", should use @string resource [HardcodedText]
+        android:text="Request a Service"
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\activity_service_request.xml:51: Warning: Hardcoded string "Service Type (e.g. Web Design)", should use @string resource [HardcodedText]
+                    android:hint="Service Type (e.g. Web Design)" />
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\activity_service_request.xml:65: Warning: Hardcoded string "Details", should use @string resource [HardcodedText]
+                    android:hint="Details"
+                    ~~~~~~~~~~~~~~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\activity_service_request.xml:74: Warning: Hardcoded string "Send Request", should use @string resource [HardcodedText]
+                android:text="Send Request" />
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\activity_sign_in.xml:15: Warning: Hardcoded string "Sign In", should use @string resource [HardcodedText]
+        android:text="Sign In"
+        ~~~~~~~~~~~~~~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\activity_sign_in.xml:51: Warning: Hardcoded string "Email", should use @string resource [HardcodedText]
+                    android:hint="Email" />
+                    ~~~~~~~~~~~~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\activity_sign_in.xml:65: Warning: Hardcoded string "Password", should use @string resource [HardcodedText]
+                    android:hint="Password"
+                    ~~~~~~~~~~~~~~~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\activity_sign_in.xml:73: Warning: Hardcoded string "Sign In", should use @string resource [HardcodedText]
+                android:text="Sign In" />
+                ~~~~~~~~~~~~~~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\activity_sign_up.xml:15: Warning: Hardcoded string "Sign Up", should use @string resource [HardcodedText]
+        android:text="Sign Up"
+        ~~~~~~~~~~~~~~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\activity_sign_up.xml:51: Warning: Hardcoded string "Email", should use @string resource [HardcodedText]
+                    android:hint="Email" />
+                    ~~~~~~~~~~~~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\activity_sign_up.xml:65: Warning: Hardcoded string "Password", should use @string resource [HardcodedText]
+                    android:hint="Password"
+                    ~~~~~~~~~~~~~~~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\activity_sign_up.xml:73: Warning: Hardcoded string "Sign Up", should use @string resource [HardcodedText]
+                android:text="Sign Up" />
+                ~~~~~~~~~~~~~~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\activity_welcome.xml:25: Warning: Hardcoded string "Welcome to Temzo Tech I.T Services", should use @string resource [HardcodedText]
+        android:text="Welcome to Temzo Tech I.T Services"
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\activity_welcome.xml:39: Warning: Hardcoded string "Your one-stop solution for all things tech.", should use @string resource [HardcodedText]
+        android:text="Your one-stop solution for all things tech."
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\activity_welcome.xml:78: Warning: Hardcoded string "Sign In", should use @string resource [HardcodedText]
+        android:text="Sign In"
+        ~~~~~~~~~~~~~~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\activity_welcome.xml:91: Warning: Hardcoded string "Sign Up", should use @string resource [HardcodedText]
+        android:text="Sign Up"
+        ~~~~~~~~~~~~~~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\menu\bottom_nav_menu.xml:6: Warning: Hardcoded string "Home", should use @string resource [HardcodedText]
+        android:title="Home" />
+        ~~~~~~~~~~~~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\menu\bottom_nav_menu.xml:10: Warning: Hardcoded string "Services", should use @string resource [HardcodedText]
+        android:title="Services" />
+        ~~~~~~~~~~~~~~~~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\menu\bottom_nav_menu.xml:14: Warning: Hardcoded string "Contact", should use @string resource [HardcodedText]
+        android:title="Contact" />
+        ~~~~~~~~~~~~~~~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\fragment_login.xml:17: Warning: Hardcoded string "Email Address", should use @string resource [HardcodedText]
+            android:hint="Email Address">
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\fragment_login.xml:31: Warning: Hardcoded string "Password", should use @string resource [HardcodedText]
+            android:hint="Password"
+            ~~~~~~~~~~~~~~~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\fragment_login.xml:48: Warning: Hardcoded string "SIGN IN", should use @string resource [HardcodedText]
+            android:text="SIGN IN" />
+            ~~~~~~~~~~~~~~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\fragment_login.xml:56: Warning: Hardcoded string "Don't have an account? Sign Up", should use @string resource [HardcodedText]
+            android:text="Don't have an account? Sign Up" />
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\fragment_sign_in.xml:32: Warning: Hardcoded string "Welcome Back", should use @string resource [HardcodedText]
+                android:text="Welcome Back"
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\fragment_sign_in.xml:41: Warning: Hardcoded string "Email Address", should use @string resource [HardcodedText]
+                android:hint="Email Address">
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\fragment_sign_in.xml:55: Warning: Hardcoded string "Password", should use @string resource [HardcodedText]
+                android:hint="Password"
+                ~~~~~~~~~~~~~~~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\fragment_sign_in.xml:78: Warning: Hardcoded string "SIGN IN", should use @string resource [HardcodedText]
+                android:text="SIGN IN"
+                ~~~~~~~~~~~~~~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\fragment_sign_in.xml:88: Warning: Hardcoded string "Don't have an account? Sign Up", should use @string resource [HardcodedText]
+                android:text="Don't have an account? Sign Up"
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\fragment_sign_up.xml:32: Warning: Hardcoded string "Create an Account", should use @string resource [HardcodedText]
+                android:text="Create an Account"
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\fragment_sign_up.xml:41: Warning: Hardcoded string "First Name", should use @string resource [HardcodedText]
+                android:hint="First Name">
+                ~~~~~~~~~~~~~~~~~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\fragment_sign_up.xml:55: Warning: Hardcoded string "Last Name", should use @string resource [HardcodedText]
+                android:hint="Last Name">
+                ~~~~~~~~~~~~~~~~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\fragment_sign_up.xml:69: Warning: Hardcoded string "Email Address", should use @string resource [HardcodedText]
+                android:hint="Email Address">
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\fragment_sign_up.xml:83: Warning: Hardcoded string "Password", should use @string resource [HardcodedText]
+                android:hint="Password"
+                ~~~~~~~~~~~~~~~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\fragment_sign_up.xml:100: Warning: Hardcoded string "SIGN UP", should use @string resource [HardcodedText]
+                android:text="SIGN UP"
+                ~~~~~~~~~~~~~~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\fragment_sign_up.xml:110: Warning: Hardcoded string "Already have an account? Sign In", should use @string resource [HardcodedText]
+                android:text="Already have an account? Sign In"
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\fragment_signup.xml:13: Warning: Hardcoded string "First Name", should use @string resource [HardcodedText]
+        android:hint="First Name">
+        ~~~~~~~~~~~~~~~~~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\fragment_signup.xml:27: Warning: Hardcoded string "Last Name", should use @string resource [HardcodedText]
+        android:hint="Last Name">
+        ~~~~~~~~~~~~~~~~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\fragment_signup.xml:41: Warning: Hardcoded string "Email Address", should use @string resource [HardcodedText]
+        android:hint="Email Address">
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\fragment_signup.xml:55: Warning: Hardcoded string "Password", should use @string resource [HardcodedText]
+        android:hint="Password"
+        ~~~~~~~~~~~~~~~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\fragment_signup.xml:72: Warning: Hardcoded string "CREATE ACCOUNT", should use @string resource [HardcodedText]
+        android:text="CREATE ACCOUNT" />
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\fragment_signup.xml:80: Warning: Hardcoded string "Already have an account? Log In", should use @string resource [HardcodedText]
+        android:text="Already have an account? Log In" />
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\menu\main_menu.xml:5: Warning: Hardcoded string "Logout", should use @string resource [HardcodedText]
+        android:title="Logout" />
+        ~~~~~~~~~~~~~~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\onboarding_slide1.xml:24: Warning: Hardcoded string "Welcome to Temzo Tech", should use @string resource [HardcodedText]
+        android:text="Welcome to Temzo Tech"
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\onboarding_slide1.xml:40: Warning: Hardcoded string "Your one-stop solution for all IT services, from hardware to software.", should use @string resource [HardcodedText]
+        android:text="Your one-stop solution for all IT services, from hardware to software."
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\onboarding_slide2.xml:49: Warning: Hardcoded string "Comprehensive IT Solutions", should use @string resource [HardcodedText]
+        android:text="Comprehensive IT Solutions"
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\onboarding_slide2.xml:65: Warning: Hardcoded string "Web Development, Networking, Hardware Sales, and much more.", should use @string resource [HardcodedText]
+        android:text="Web Development, Networking, Hardware Sales, and much more."
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\onboarding_slide3.xml:24: Warning: Hardcoded string "Request a Service", should use @string resource [HardcodedText]
+        android:text="Request a Service"
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\onboarding_slide3.xml:40: Warning: Hardcoded string "Sign up and get your IT issues solved with just a few taps.", should use @string resource [HardcodedText]
+        android:text="Sign up and get your IT issues solved with just a few taps."
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+F:\ANDROID APPS\TTIT\app\src\main\res\layout\service_item.xml:29: Warning: Hardcoded string "Service Name", should use @string resource [HardcodedText]
+            android:text="Service Name"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "HardcodedText":
+   Hardcoding text attributes directly in layout files is bad for several
+   reasons:
+
+   * When creating configuration variations (for example for landscape or
+   portrait) you have to repeat the actual text (and keep it up to date when
+   making changes)
+
+   * The application cannot be translated to other languages by just adding
+   new translations for existing string resources.
+
+   There are quickfixes to automatically extract this hardcoded string into a
+   resource lookup.
+
+0 errors, 133 warnings

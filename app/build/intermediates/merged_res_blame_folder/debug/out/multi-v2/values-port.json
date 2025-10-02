@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.temzotech.app-mergeDebugResources-42:/values-port/values-port.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\Temzo Tech\\.gradle\\caches\\transforms-3\\86057587fbe093c70e1b00eaa3d18edf\\transformed\\appcompat-1.6.1\\res\\values-port\\values-port.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "55",
+                        "endOffsets": "106"
+                    }
+                }
+            ]
+        }
+    ]
+}

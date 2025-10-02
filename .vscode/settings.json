@@ -1,0 +1,10 @@
+{
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "java.compile.nullAnalysis.mode": "automatic",
+    "android.sdkPath": "C:/Users/Temzo Tech/AppData/Local/Android/android-sdk",
+    "java.project.sourcePaths": [
+        "app\\src\\main\\java"
+    ],
+    "java.project.referencedLibraries": []
+}
+

@@ -1,5 +1,6 @@
 package com.temzotech;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -19,6 +20,8 @@ import androidx.viewpager2.widget.ViewPager2;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthException;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
 
 public class SignUpFragment extends Fragment {
 
@@ -80,9 +83,22 @@ public class SignUpFragment extends Fragment {
                         if (isAdded()) { // Check if the fragment is currently added to its activity.
                             signupProgressBar.setVisibility(View.GONE);
                             if (task.isSuccessful()) {
-                                // Sign in success, navigate to login
-                                ViewPager2 viewPager = getActivity().findViewById(R.id.view_pager_auth);
-                                viewPager.setCurrentItem(0);
+                                FirebaseUser user = mAuth.getCurrentUser();
+                                UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
+                                        .setDisplayName(firstName + " " + lastName).build();
+                                if (user != null) {
+                                    user.updateProfile(profileUpdates).addOnCompleteListener(updateTask -> {
+                                        if (updateTask.isSuccessful()) {
+                                            startActivity(new Intent(getActivity(), MainActivity.class));
+                                            getActivity().finish();
+                                        }
+                                    });
+                                } else {
+                                    //This case should not happen
+                                    ViewPager2 viewPager = getActivity().findViewById(R.id.view_pager_auth);
+                                    viewPager.setCurrentItem(0);
+                                }
+
                             } else {
                                 // If sign in fails, display a message to the user.
                                 Exception exception = task.getException();
